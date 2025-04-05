@@ -7,6 +7,19 @@ from bs4 import BeautifulSoup
 from statistics import mean, mode
 from collections import Counter
 import pandas as pd
+import random
+import threading
+
+# EXPOSED PROXY ADDRESSSSSSẞSSSSSSSSSSSSSSSSSS'SSSSSSSSSSSSSSXSSSSFSFAADSFADSFADSFADSFADSDFASDFADSDFADSFADSFAS
+
+proxies = ['http://pingproxies:scrapemequickly@194.87.135.1:9875',
+'http://pingproxies:scrapemequickly@194.87.135.2:9875',
+'http://pingproxies:scrapemequickly@194.87.135.3:9875',
+'http://pingproxies:scrapemequickly@194.87.135.4:9875',
+'http://pingproxies:scrapemequickly@194.87.135.5:9875']
+
+def get_random_proxy():
+    return {'http': random.choice(proxies), 'https': random.choice(proxies)}
 
 # def create_team(team_name: str, team_email: str) -> str:
 #     r = requests.post(
@@ -227,7 +240,7 @@ base_url = "https://scrapemequickly.com"
 # </body></html>
 # '''
 
-html_doc = """<html><head><title>The Dormouse's story</title></head>
+html_practice_doc = """<html><head><title>The Dormouse's story</title></head>
 <body>
 <p class="title"><b>The Dormouse's story</b></p>
 
@@ -247,62 +260,70 @@ and they lived at the bottom of a well.</p>
 #     "avg_price": 24148,
 #     "mode_make": "volkswagen"
 # }
+def scrape():
+    url = 'https://scrapemequickly.com/cars/static/0?scraping_run_id=89d5dca4-0a34-11f0-b686-4a33b21d14f6'
+    data = pd.DataFrame(columns=['make', 'year', 'price'])
+    for x in range(0, 10):
+        try:
+            # Step 1: Request the page
+            if random.randint(0,6) == 0:
+                response = requests.get(url)
+            else:
+                response = requests.get(url, proxies=get_random_proxy())
+            soup = BeautifulSoup(response.text, 'html.parser') 
+        except:
+            print("ERROR1:",soup)
+            data.head()
+            break
+        try:
+            # Step 2: Extract fields
 
-url = 'https://scrapemequickly.com/cars/static/0?scraping_run_id=89d5dca4-0a34-11f0-b686-4a33b21d14f6'
-data = pd.DataFrame(columns=['make', 'year', 'price'])
-for x in range(0, 5):
-    try:
-        # Step 1: Request the page
-        response = requests.get(url)
-        soup = BeautifulSoup(response.text, 'html.parser') 
-    except:
-        print("ERROR1:",soup)
-        data.head()
-        break
-        # Step 2: Extract fields
+            #.text Extracts just the inner text (Volkswagen, Transporter)—removes HTML tags.
+            #.strip() Removes extra spaces or newlines at the beginning/end.
+            title = soup.find("h2", class_="title").text.strip()
+            nextbutton = soup.find("a", class_="btn ml-4")
+            if nextbutton:
+                relative_url = nextbutton['href']
+            #print("NEXT BUTTON:",nextbutton)
+        except:
+            print("ERROR2:",soup)
+            break
 
-        #.text Extracts just the inner text (Volkswagen, Transporter)—removes HTML tags.
-        #.strip() Removes extra spaces or newlines at the beginning/end.
-    try:
-        title = soup.find("h2", class_="title").text.strip()
-        nextbutton = soup.find("a", class_="btn ml-4")
-        if nextbutton:
-            relative_url = nextbutton['href']
-        print("NEXT BUTTON:",nextbutton)
-    except:
-        print("ERROR2:",soup)
-        break
+        try:
+            # title.split(","): Splits the title text into a list
+            make = title.split(",")[0].strip()  
+            #print(make)
+            year = int(soup.find("p", class_="year").text.strip().split(":")[1])
+            #print(year)
+            price_text = soup.find("p", class_="price").text.strip()
+            #print(price_text)
+            price = int(re.sub(r'[^\d]', '', price_text))  # Remove $ and commas
+            #print(price)
 
-    try:
-        # title.split(","): Splits the title text into a list
-        make = title.split(",")[0].strip()  # 'Volkswagen'
-        print(make)
-        year = int(soup.find("p", class_="year").text.strip().split(":")[1])
-        print(year)
-        price_text = soup.find("p", class_="price").text.strip()
-        print(price_text)
-        price = int(re.sub(r'[^\d]', '', price_text))  # Remove $ and commas
-        print(price)
+            url = base_url + relative_url
+            #print(url)
 
-        url = base_url + relative_url
-        print(url)
-        print()
-        print()
+            datatoappend = {'make': make, 'year': year, 'price': price}
+            data = pd.concat([data, pd.DataFrame([datatoappend])], ignore_index=True) # Adds a new row
+            print(x)
 
-        datatoappend = {'make': make, 'year': year, 'price': price}
-        data = pd.concat([data, pd.DataFrame([datatoappend])], ignore_index=True) # Adds a new row
-
-        if not nextbutton:
-            print("FIN")
-    except:
-        print("ERROR3:",soup)
-        break
+            if not nextbutton:
+                print("FIN")
+        except:
+            print("ERROR3:",soup)
+            break
+        
+    # data processing
+    data.head()
+    min_year = data['year'].min()
+    max_year = data['year'].max()
+    avg_price = data['price'].mean()
+    mode_make = data['make'].mode()
+    return min_year, max_year, avg_price, mode_make, data
     
-# data processing
-data.head()
-min_year = data['year'].min()
-max_year = data['year'].max()
-avg_price = data['price'].mean()
-mode_make = data['make'].mode()
-print(min_year, max_year, avg_price, mode_make)
+min_year, max_year, avg_price, mode_make, data = scrape()
+print("MIN YEAR:", min_year)
+print("MAX YEAR:", max_year)
+print("AVG PRICE:", avg_price)
+print("MODE MAKE:", mode_make)
 data.to_csv('cars.csv', index=False)

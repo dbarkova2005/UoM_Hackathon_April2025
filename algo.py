@@ -1,31 +1,31 @@
 import yfinance as yf
 import pandas as pd
 
-symbols = [
-    "PLTR", "MSTR", "AXON", "APP", "ARM", "LIN", "AZN", "BKR", "AVGO", "BIIB",
-    "BKNG", "CDNS", "ADBE", "CHTR", "CPRT", "CSGP", "CRWD", "CTAS", "CSCO", "CMCSA",
-    "COST", "CSX", "CTSH", "DDOG", "DXCM", "FANG", "EA", "ON", "EXC", "TTD", "FAST",
-    "GFS", "META", "FI", "FTNT", "GILD", "GOOG", "GOOGL", "HON", "INTC", "INTU", "ISRG",
-    "MRVL", "IDXX", "KDP", "KLAC", "KHC", "LRCX", "LULU", "MELI", "MAR", "MCHP", "MDLZ",
-    "MNST", "MSFT", "MU", "NFLX", "GRAL", "NVDA", "NXPI", "ODFL", "ORLY", "PCAR", "PANW",
-    "PAYX", "PDD", "PYPL", "PEP", "QCOM", "REGN", "ROST", "SBUX", "SNPS", "TSLA", "TXN",
-    "TMUS", "VRSK", "VRTX", "WBD", "WDAY", "XEL", "ZS", "ADP", "ABNB", "AMD", "CEG", "AMZN",
-    "AMGN", "AEP", "CDW", "CCEP", "ADI", "MDB", "DASH", "ROP", "ANSS", "AAPL", "AMAT", "GEHC",
-    "ASML", "TEAM", "ADSK"
-]
 
-def test_yfinance():
-    temp = ""
-    # print(dat.info["sector"])
-    # print(dat.info["industry"])
-    # print(dat.history(period='1y'))
+sectors = ["crypto", "finance", "technology", "life science", "real estate", "transportation", "energy", "manufacturing"]
 
-    for ticker in symbols:
-        temp = yf.Ticker(ticker)
+
+symbols = {
+    "crypto": ["BTC", "ETH", "XRP", "BNB", "USDT"],
+    "finance": ["JPM", "BAC", "WFC", "PGR", "GS", "SPGI"],
+    "technology": ["AAPL", "MSFT", "NVDA", "GOOG", "GOOGL", "META", "AMZN"],
+    "life science":["ISRG", "AMGN", "GILD", "VRTX", "REGN", "ALNY"],
+    "real estate": ["AMT", "WELL", "PLD", "PSA", "DLR", "VICI"],
+    "transportation": ["UPS", "DAL", "UNP", "CSX", "LUV", "UBER"],
+    "energy": ["FANG", "EXE", "EXEEW", "VNOM", "EXEEL", "PAA"],
+    "manufacturing": ["MMM", "CAT", "DE", "AMAT", "GE", "HON"]
+}
+
+def analysis1(start_date, avoid):
+    for sector in sectors:
+        if sector in avoid:
+            continue
+        else: 
+            pass
 
 
 def analysis(start_date, end_date, avoid):
-    data = yf.download(symbols, start="2023-04-14", end="2024-12-14")
+    data = yf.download(symbols, start=start_date, end=end_date)
 
     result = {}
 
@@ -95,16 +95,7 @@ def extract_preferences(message: str):
 # count = 0
 # total = 0
 with open("examples.txt", "r") as f:
-    contexts = f.readlines()
-    for ctx in contexts:
-        msg = eval(ctx)["message"]
-        pref = extract_preferences(msg)
-        # if pref:
-        #     count += 1
-        # total += 1
-        print(pref)
-# print(count/total * 100)
-        temp_dict = extract_preferences(msg)
-        # analysis(temp_dict.get("start_date"), temp_dict.get("end_date"), avoid = [])
-    
-analysis(start_date="", end_date="", avoid="")
+    ctx = f.readlines()[0]
+    msg = eval(ctx)["message"]
+    pref = extract_preferences(msg)
+analysis(start_date=pref["start_date"], end_date=pref["end_date"], avoid=pref["avoided_sectors"])

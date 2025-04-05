@@ -1,107 +1,43 @@
-import json
 import requests
-import os
-from dotenv import load_dotenv
-load_dotenv()
+import sys
+import json
 
-URL = "mts-prism.com"
-PORT = 8082
+def create_team(team_name: str, team_email: str) -> str:
+    r = requests.post(
+        "https://api.scrapemequickly.com/register",
+        data=json.dumps({"team_name": team_name, "team_email": team_email}),
+        headers={"Content-Type": "application/json"}
+    )
 
-# Please do NOT share this information anywhere, unless you want your team to be cooked.
-TEAM_API_CODE = os.getenv("TEAM_API_CODE")
-# @cyrus or @myguysai on Discord if you need an API key
+    if r.status_code != 200:
+        print(r.json())
+        print("Failed to create a team")
+        sys.exit(1)
 
-def send_get_request(path):
-    """
-    Sends a HTTP GET request to the server.
-    Returns:
-        (success?, error or message)
-    """
-    headers = {"X-API-Code": TEAM_API_CODE}
-    response = requests.get(f"http://{URL}:{PORT}/{path}", headers=headers)
-
-    # Check whether there was an error sent from the server.
-    # 200 is the HTTP Success status code, so we do not expect any
-    # other response code.
-    if response.status_code != 200:
-        return (
-            False,
-            f"Error - something went wrong when requesting [CODE: {response.status_code}]: {response.text}",
-        )
-    return True, response.text
+    return r.json()["data"]["team_id"]
 
 
-def send_post_request(path, data=None):
-    """
-    Sends a HTTP POST request to the server.
-    Pass in the POST data to data, to send some message.
-    Returns:
-         (success?, error or message)
-    """
-    headers = {"X-API-Code": TEAM_API_CODE, "Content-Type": "application/json"}
+def start_scraping_run(team_id: str) -> str:
+    r = requests.post(f"https://api.scrapemequickly.com/scraping-run?team_id={team_id}")
 
-    # Convert the data from python dictionary to JSON string,
-    # which is the expected format to be passed
-    data = json.dumps(data)
-    response = requests.post(f"http://{URL}:{PORT}/{path}", data=data, headers=headers)
+    if r.status_code != 200:
+        print(r.json())
+        print("Failed to start scraping run")
+        sys.exit(1)
 
-    # Check whether there was an error sent from the server.
-    # 200 is the HTTP Success status code, so we do not expect any
-    # other response code.
-    if response.status_code != 200:
-        return (
-            False,
-            f"Error - something went wrong when requesting [CODE: {response.status_code}]: {response.text}",
-        )
-    return True, response.text
+    return r.json()["data"]["scraping_run_id"]
 
 
-def get_context():
-    """
-    Query the challenge server to request for a client to design a portfolio for.
-    Returns:
-        (success?, error or message)
-    """
-    return send_get_request("/request")
+def submit(answers: dict, scraping_run_id: str) -> bool:
+    r = requests.post(
+        f"https://api.scrapemequickly.com/cars/solve?scraping_run_id={scraping_run_id}",
+        data=json.dumps(answers),
+        headers={"Content-Type": "application/json"}
+    )
 
+    if r.status_code != 200:
+        print(r.json())
+        print("Failed to submit answers")
+        return False
 
-def get_my_current_information():
-    """
-    Query your team information.
-    Returns:
-        (success?, error or message)
-    """
-    return send_get_request("/info")
-
-
-def send_portfolio(weighted_stocks):
-    """
-    Send portfolio stocks to the server for evaluation.
-    Returns:
-        (success?, error or message)
-    """
-    data = [
-        {"ticker": weighted_stock[0], "quantity": weighted_stock[1]}
-        for weighted_stock in weighted_stocks
-    ]
-    return send_post_request("/submit", data=data)
-
-
-success, information = get_my_current_information()
-if not success:
-    print(f"Error: {information}")
-print(f"Team information: ", information)
-
-def compute():
-    success, context = get_context()
-    if not success:
-        print(f"Error: {context}")
-    print(f"Context provided: ", context)
-
-    # Maybe do something with the context to generate this?
-    portfolio = [("AAPL", 1), ("MSFT", 1), ("NVDA", 1), ("PFE", 1)]
-
-    success, response = send_portfolio(portfolio)
-    if not success:
-        print(f"Error: {response}")
-    print(f"Evaluation response: ", response)
+    return True

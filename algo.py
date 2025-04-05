@@ -124,13 +124,9 @@ def compute(message: str):
     else:
         return None
 
-# with open("out.txt", "a") as f:
-#     f.write(str(compute("Jeffrey Reilly started investing on April 29, 2011 and ended on August 18, 2013. His hobbies include learning languages, trading and services, and life sciences. He has a total budget of $4507 and a salary of $42232 per annum.")))
-# count = 0
-# total = 0
-# with open("examples.txt", "r") as f:
-#     ctx = f.readlines()[0]
-#     msg = eval(ctx)["message"]
-#     pref = extract_preferences(msg)
-#     prices = analysis1(start_date=pref["start_date"], end_date=pref["end_date"], avoid=pref["avoided_sectors"])
-#     print(pack_portfolio(prices, pref["total_budget"]))
+with open("examples.txt", "r") as f:
+    ctx = f.readlines()[0]
+    msg = eval(ctx)["message"]
+    pref = extract_preferences(msg)
+    prices = analysis1(start_date=pref["start_date"], end_date=pref["end_date"], avoid=pref["avoided_sectors"])
+    print(pack_portfolio(prices, pref["total_budget"]))

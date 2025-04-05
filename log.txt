@@ -1,0 +1,19 @@
+Sierra Miller is a 75-year-old investor who started investing on September 15, 2024 and ended on October 27, 2024. She enjoys bird watching and avoids finance or crypto assets, structured finance, international corp fin, trade and services, industrial applications and services.Error: Not sentStephanie Larson is 24 years old and has a budget of $119046. She started investing on August 23rd 2014 and ended on May 4th 2016. She avoids Trade and Services, Structured Finance, Manufacturing, Energy and Transportation.Error: Not sentEvaluation response: Not sentAllison Brown is 71 years old and has a total budget of $65862. She started investing in 2021-05-20 and ended it on 2023-11-18. She avoids Manufacturing, International Corp Fin, and Life Sciences. She is employed at True Salary of $292839 a year.Error: Not sentEvaluation response: Not sentJill York is 65 years old and has a budget of $1845 per year. She started investing in 2014-03-18 and ended it on 2015-01-27. She enjoys bird watching and avoids industrial applications and services, structured finance, trade and services, life sciences and manufacturing.
+Evaluation response: {"passed": true, "profit": 76.64720000000011, "points": -2.5075105645246896, "error": ""}
+
+Dustin Petty is 58 years old and has a budget of $13273. His investment start date is 2021-06-06 and his investment end date is 2023-06-26. He avoids Energy and Transportation, Trade and Services.
+Evaluation response: {"passed": true, "profit": 2161.357, "points": 29.763338606207633, "error": ""}
+
+Dylan Ramirez is a 36-year-old man who has invested in real estate and construction. His investment started on August 15th, 2016 and ended on January 23rd, 2018. He has a budget of $22849.
+Evaluation response: {"passed": true, "profit": 9394.1342, "points": -21.16488108818144, "error": ""}
+
+Lauren Peters is a 66-year-old investor who started investing in 2015-01-12 and ended it on 2016-04-02. She enjoys hiking and avoids Energy and Transportation, Real Estate and Construction. She has a true salary of $257797 a year and a budget of $59225.
+Error: Not sent
+Evaluation response: Not sent
+Samantha Rose is 74 years old and has a total budget of $16492. She started investing on April 2, 2024 and ended on April 10, 2024. She enjoys learning languages and prefers to avoid manufacturing, International Corp Fin, Finance or Crypto Assets.
+Error: Not sent
+Evaluation response: Not sent
+Robin Christenson is a 68-year-old investor who started investing on January 23rd, 2016 and ended on October 2nd, 2018. His hobbies include photography and he avoids Energy and Transportation, Technology, and Structured Finance. He has a budget of $20460 total.
+Evaluation response: {"passed": true, "profit": 13540.199400000001, "points": -10.757329345969266, "error": ""}
+
+Monica King is a 56-year-old female investor who started investing in 2012-02-10 and ended in 2014-11-27. She enjoys painting and avoids manufacturing, crypto assets, finance, trade and services. She has a true salary of $166913, and a budget of $76846.

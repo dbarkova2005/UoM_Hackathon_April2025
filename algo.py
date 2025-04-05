@@ -1,5 +1,6 @@
 import yfinance as yf
 import pandas as pd
+import datetime
 
 
 sectors = ["crypto", "finance", "technology", "life science", "real estate", "transportation", "energy", "manufacturing"]
@@ -16,31 +17,52 @@ symbols = {
     "manufacturing": ["MMM", "CAT", "DE", "AMAT", "GE", "HON"]
 }
 
-def analysis1(start_date, avoid):
+def analysis1(start_date, end_date, avoid):
+
+    invest = {}
     for sector in sectors:
         if sector in avoid:
             continue
-        else: 
-            pass
+        else:
+            temp_tickers = symbols[sector]
+            # for ticker in temp_tickers:
+            start_date1 = datetime.datetime.strptime(start_date, "%Y-%m-%d")+datetime.timedelta(days=1)
+            end_date1 = datetime.datetime.strptime(end_date, "%Y-%m-%d")+datetime.timedelta(days=1)
+            try:
+                open_data = yf.download(" ".join(temp_tickers), start=start_date, end=start_date1.strftime("%Y-%m-%d"))
+                close_data = yf.download(" ".join(temp_tickers), start=end_date, end=end_date1.strftime("%Y-%m-%d"))
+                print(open_data)
+                print(close_data)
+                for ticker in open_data['Open']:
+                    open_price = open_data['Open'][ticker].iloc[0]
+                    close_price = close_data['Open'][ticker].iloc[0]
+                    if close_price - open_price > 0:
+                        invest[ticker] = float(open_price)
+            except Exception as e:
+                pass
+    
+    print(invest)
 
 
-def analysis(start_date, end_date, avoid):
-    data = yf.download(symbols, start=start_date, end=end_date)
 
-    result = {}
+# def analysis(start_date, end_date, avoid):
+#     data_open = yf.download(symbols, start=start_date, end=start_date+timedelta(minutes=1))
+#     data_close = yf.download(symbols, start=end_date, end=end_date+timedelta(minutes=1))
 
-    for ticker in symbols:
-        try:
-            open_price = data['Open'][ticker].iloc[0]
-            close_price = data['Close'][ticker].iloc[-1]
-            result[ticker] = {
-                'Change %': ((close_price - open_price) / open_price) * 100
-            }
-        except Exception as e:
-            result[ticker] = f"Error: {e}"
+#     result = {}
 
-    print(result)
-    return result
+#     for ticker in symbols:
+#         try:
+#             open_price = data_open['Open'][ticker].iloc[0]
+#             close_price = data_close['Open'][ticker].iloc[0]
+#             result[ticker] = {
+#                 'Change %': ((close_price - open_price) / open_price) * 100
+#             }
+#         except Exception as e:
+#             result[ticker] = f"Error: {e}"
+
+#     print(result)
+#     return result
 
 
 import re
@@ -98,4 +120,5 @@ with open("examples.txt", "r") as f:
     ctx = f.readlines()[0]
     msg = eval(ctx)["message"]
     pref = extract_preferences(msg)
-analysis(start_date=pref["start_date"], end_date=pref["end_date"], avoid=pref["avoided_sectors"])
+# analysis(start_date=pref["start_date"], end_date=pref["end_date"], avoid=pref["avoided_sectors"])
+    prices = analysis1(start_date=pref["start_date"], end_date=pref["end_date"], avoid=["crypto"])

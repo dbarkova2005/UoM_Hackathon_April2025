@@ -4,6 +4,8 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
+from algo import compute
+
 URL = "mts-prism.com"
 PORT = 8082
 
@@ -92,16 +94,15 @@ if not success:
     print(f"Error: {information}")
 print(f"Team information: ", information)
 
-def compute():
-    success, context = get_context()
-    if not success:
-        print(f"Error: {context}")
-    print(f"Context provided: ", context)
+success, context = get_context()
+if not success:
+    print(f"Error: {context}")
+print(f"Context provided: ", context)
 
-    # Maybe do something with the context to generate this?
-    portfolio = [("AAPL", 1), ("MSFT", 1), ("NVDA", 1), ("PFE", 1)]
+# Maybe do something with the context to generate this?
+portfolio = compute(context[0]["message"])
 
-    success, response = send_portfolio(portfolio)
-    if not success:
-        print(f"Error: {response}")
-    print(f"Evaluation response: ", response)
+success, response = send_portfolio(portfolio)
+if not success:
+    print(f"Error: {response}")
+print(f"Evaluation response: ", response)

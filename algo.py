@@ -34,11 +34,11 @@ def analysis1(start_date, end_date, avoid):
         else:
             temp_tickers = symbols[sector]
             # for ticker in temp_tickers:
-            start_date1 = datetime.datetime.strptime(start_date, "%Y-%m-%d")+datetime.timedelta(days=1)
-            end_date1 = datetime.datetime.strptime(end_date, "%Y-%m-%d")+datetime.timedelta(days=1)
+            start_date1 = datetime.datetime.strptime(start_date, "%Y-%m-%d")+datetime.timedelta(days=3)
+            end_date1 = datetime.datetime.strptime(end_date, "%Y-%m-%d")+datetime.timedelta(days=3)
             try:
-                open_data = yf.download(" ".join(temp_tickers), start=start_date, end=start_date1.strftime("%Y-%m-%d"))
-                close_data = yf.download(" ".join(temp_tickers), start=end_date, end=end_date1.strftime("%Y-%m-%d"))
+                open_data = yf.download(" ".join(temp_tickers), start=start_date, end=start_date1.strftime("%Y-%m-%d"), progress=False)
+                close_data = yf.download(" ".join(temp_tickers), start=end_date, end=end_date1.strftime("%Y-%m-%d"), progress=False)
                 print(open_data)
                 print(close_data)
                 for ticker in open_data['Open']:
@@ -76,8 +76,9 @@ def extract_preferences(message: str):
     stop_words = set(stopwords.words("english"))
     filtered_words = [word for word in tokens if
                       word.casefold() not in stop_words]
-    context_dict["start_date"] = search_dates(message)[-2][1]
-    context_dict["end_date"] = search_dates(message)[-1][1]
+    dates = [d[1] for d in search_dates(message) if d[1].year < 2026]
+    context_dict["start_date"] = dates[0]
+    context_dict["end_date"] = dates[1]
     for i, word in enumerate(filtered_words):
         if re.match(r"[0-9]+-year-old", word):
             context_dict["age"] = int(word.split("-")[0])
@@ -116,11 +117,11 @@ def extract_preferences(message: str):
 
 def compute(message: str):
     pref = extract_preferences(message)
-    print(pref)
     prices = analysis1(start_date=pref["start_date"], end_date=pref["end_date"], avoid=pref["avoided_sectors"])
     return pack_portfolio(prices, pref["total_budget"])
 
-print(compute("Jeffrey Reilly started investing on April 29, 2011 and ended on August 18, 2013. His hobbies include learning languages, trading and services, and life sciences. He has a total budget of $4507 and a salary of $42232 per annum."))
+# with open("out.txt", "a") as f:
+#     f.write(str(compute("Jeffrey Reilly started investing on April 29, 2011 and ended on August 18, 2013. His hobbies include learning languages, trading and services, and life sciences. He has a total budget of $4507 and a salary of $42232 per annum.")))
 # count = 0
 # total = 0
 # with open("examples.txt", "r") as f:

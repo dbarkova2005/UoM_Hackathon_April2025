@@ -49,23 +49,24 @@ def analysis1(start_date, end_date, avoid):
             except Exception as e:
                 pass
     
-    print(invest)
-
-    print(result)
-    return result
+    # print(invest)
+    return invest
 
 
 def pack_portfolio(stock_prices: dict, budget: int):
     portfoio = {}
     remaining_budget = budget
-    sorted_stocks = sorted(stock_prices, key=lambda x: stock_prices[x], reverse=True)
+    stock_prices = list(stock_prices.items())
+    sorted_stocks = sorted(stock_prices, key=lambda x: x[1], reverse=True)
+    print(sorted_stocks)
     n = len(sorted_stocks)
-    while remaining_budget > sorted_stocks[-1]:
-        if sorted_stocks[i] <= remaining_budget:
-            portfoio[sorted_stocks[i]] = portfoio.get(sorted_stocks[i], 0) + 1
-            remaining_budget -= sorted_stocks[i]
-            i = (i + 1)%n
-
+    i = 0
+    while remaining_budget > sorted_stocks[-1][1]:
+        if sorted_stocks[i][1] <= remaining_budget:
+            portfoio[sorted_stocks[i][0]] = portfoio.get(sorted_stocks[i][0], 0) + 1
+            remaining_budget -= sorted_stocks[i][1]
+        i = (i + 1)%n
+    return portfoio
 
 def extract_preferences(message: str):
     context_dict = {"start_date": None, "end_date": None, "age": -1, "total_budget": None, "avoided_sectors": [], 
@@ -119,6 +120,5 @@ with open("examples.txt", "r") as f:
     ctx = f.readlines()[0]
     msg = eval(ctx)["message"]
     pref = extract_preferences(msg)
-    print(pref)
-# # analysis(start_date=pref["start_date"], end_date=pref["end_date"], avoid=pref["avoided_sectors"])
-    prices = analysis1(start_date=pref["start_date"], end_date=pref["end_date"], avoid=["crypto"])
+    prices = analysis1(start_date=pref["start_date"], end_date=pref["end_date"], avoid=pref["avoided_sectors"])
+    print(pack_portfolio(prices, pref["total_budget"]))

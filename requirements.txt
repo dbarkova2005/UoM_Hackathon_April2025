@@ -1,2 +1,3 @@
 pyneuphonic
 pyaudio
+opencv-python pillow pytesseract

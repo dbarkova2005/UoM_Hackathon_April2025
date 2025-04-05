@@ -17,9 +17,24 @@ from nltk.tokenize import word_tokenize
 MONTHS = ["January", "February", "March", "April", "May", "June", "July",
           "August", "September", "October", "November", "December"]
 
+KEYWORDS = ["finance"]
+
+def pack_portfolio(stock_prices: dict, budget: int):
+    portfoio = {}
+    remaining_budget = budget
+    sorted_stocks = sorted(stock_prices, key=lambda x: stock_prices[x], reverse=True)
+    n = len(sorted_stocks)
+    while remaining_budget > sorted_stocks[-1]:
+        if sorted_stocks[i] <= remaining_budget:
+            portfoio[sorted_stocks[i]] = portfoio.get(sorted_stocks[i], 0) + 1
+            remaining_budget -= sorted_stocks[i]
+            i = (i + 1)%n
+
+
 def extract_preferences(message: str):
-    timer_start = time.time()
-    context_dict = {"start_date": None, "end_date": None, "age": -1, "total_budget": None, "avoided_sectors": [], "extraction_time": None}
+    context_dict = {"start_date": None, "end_date": None, "age": -1, "total_budget": None, "avoided_sectors": [], 
+                    # "extraction_time": None
+                }
     tokens = word_tokenize(message)
     stop_words = set(stopwords.words("english"))
     filtered_words = [word for word in tokens if
@@ -45,10 +60,14 @@ def extract_preferences(message: str):
         elif word == "avoids":
             avoid_phrase = filtered_words[i:]
             split = avoid_phrase.index(".")
-            avoided_sectors = [word for word in avoid_phrase[1:split] if word != ","]
-            context_dict["avoided_sectors"] = avoided_sectors
-    timer_end = time.time()
-    context_dict["extraction_time"] = timer_end-timer_start
+            avoided_sectors = [word.lower() for word in avoid_phrase[1:split] if word != ","]
+            avoid_list = []
+            for kw in KEYWORDS:
+                if re.match(kw, " ".join(avoided_sectors)):
+                    avoid_list.append(kw)
+            context_dict["avoided_sectors"] = avoid_list
+    # timer_end = time.time()
+    # context_dict["extraction_time"] = timer_end-timer_start
     context_dict["start_date"] = context_dict["start_date"].strftime("%Y-%m-%d")
     context_dict["end_date"] = context_dict["end_date"].strftime("%Y-%m-%d")
     if not any([d == None for d in list(context_dict.values())]):

@@ -82,11 +82,14 @@ def send_portfolio(weighted_stocks):
     Returns:
         (success?, error or message)
     """
-    data = [
-        {"ticker": weighted_stock[0], "quantity": weighted_stock[1]}
-        for weighted_stock in weighted_stocks
-    ]
-    return send_post_request("/submit", data=data)
+    if weighted_stocks:
+        data = [
+            {"ticker": weighted_stock[0], "quantity": weighted_stock[1]}
+            for weighted_stock in weighted_stocks
+        ]
+        return send_post_request("/submit", data=data)
+    else:
+        return (False, "Not sent")
 
 
 success, information = get_my_current_information()
@@ -94,15 +97,17 @@ if not success:
     print(f"Error: {information}")
 print(f"Team information: ", information)
 
-success, context = get_context()
-if not success:
-    print(f"Error: {context}")
-print(f"Context provided: ", context)
+while True:
+    success, context = get_context()
+    if not success:
+        print(f"Error: {context}")
+    print(f"Context provided: ", context)
 
-# Maybe do something with the context to generate this?
-portfolio = compute(context[0]["message"])
+    # Maybe do something with the context to generate this?
+    # print(eval(context)["message"])
+    portfolio = compute(eval(context)["message"])
 
-success, response = send_portfolio(portfolio)
-if not success:
-    print(f"Error: {response}")
-print(f"Evaluation response: ", response)
+    success, response = send_portfolio(portfolio)
+    if not success:
+        print(f"Error: {response}")
+    print(f"Evaluation response: ", response)

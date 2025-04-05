@@ -39,8 +39,8 @@ def analysis1(start_date, end_date, avoid):
             try:
                 open_data = yf.download(" ".join(temp_tickers), start=start_date, end=start_date1.strftime("%Y-%m-%d"), progress=False)
                 close_data = yf.download(" ".join(temp_tickers), start=end_date, end=end_date1.strftime("%Y-%m-%d"), progress=False)
-                print(open_data)
-                print(close_data)
+                # print(open_data)
+                # print(close_data)
                 for ticker in open_data['Open']:
                     open_price = open_data['Open'][ticker].iloc[0]
                     close_price = close_data['Open'][ticker].iloc[0]
@@ -58,7 +58,7 @@ def pack_portfolio(stock_prices: dict, budget: int):
     remaining_budget = budget
     stock_prices = list(stock_prices.items())
     sorted_stocks = sorted(stock_prices, key=lambda x: x[1], reverse=True)
-    print(sorted_stocks)
+    # print(sorted_stocks)
     n = len(sorted_stocks)
     i = 0
     while remaining_budget > sorted_stocks[-1][1]:
@@ -76,7 +76,7 @@ def extract_preferences(message: str):
     stop_words = set(stopwords.words("english"))
     filtered_words = [word for word in tokens if
                       word.casefold() not in stop_words]
-    dates = [d[1] for d in search_dates(message) if d[1].year < 2026]
+    dates = [d[1] for d in search_dates(message) if 2000 < d[1].year < 2026]
     context_dict["start_date"] = dates[0]
     context_dict["end_date"] = dates[1]
     for i, word in enumerate(filtered_words):
@@ -95,12 +95,12 @@ def extract_preferences(message: str):
         elif word == "total" and filtered_words[i+1] == "investment":
             budget_phrase = filtered_words[i:i+5]
             context_dict["total_budget"] = int(int(budget_phrase[3]))
-        elif word == "avoids":
+        elif word == "avoids" or "avoid":
             avoid_phrase = filtered_words[i:]
             split = avoid_phrase.index(".")
             avoided_sectors = [word.lower() for word in avoid_phrase[1:split] if word != ","]
             avoid_list = []
-            print(" ".join(avoided_sectors))
+            # print(" ".join(avoided_sectors))
             for kw in sectors:
                 if re.search(kw, " ".join(avoided_sectors)):
                     avoid_list.append(kw)
@@ -112,22 +112,21 @@ def extract_preferences(message: str):
     if not any([d == None for d in list(context_dict.values())]):
         return context_dict
     else:
-        print("WE CAN'T PARSE: '" + message + "' yet.")
+        # print("WE CAN'T PARSE: '" + message + "' yet.")
         return False
 
 def compute(message: str):
     pref = extract_preferences(message)
-    prices = analysis1(start_date=pref["start_date"], end_date=pref["end_date"], avoid=pref["avoided_sectors"])
-    print(prices)
-    return pack_portfolio(prices, pref["total_budget"])
+    if pref:
+        prices = analysis1(start_date=pref["start_date"], end_date=pref["end_date"], avoid=pref["avoided_sectors"])
+        portfolio_dict = pack_portfolio(prices, pref["total_budget"])
+        return list(portfolio_dict.items())
+    else:
+        return None
 
-# with open("out.txt", "a") as f:
-#     f.write(str(compute("Jeffrey Reilly started investing on April 29, 2011 and ended on August 18, 2013. His hobbies include learning languages, trading and services, and life sciences. He has a total budget of $4507 and a salary of $42232 per annum.")))
-# count = 0
-# total = 0
-# with open("examples.txt", "r") as f:
-#     ctx = f.readlines()[0]
-#     msg = eval(ctx)["message"]
-#     pref = extract_preferences(msg)
-#     prices = analysis1(start_date=pref["start_date"], end_date=pref["end_date"], avoid=pref["avoided_sectors"])
-#     print(pack_portfolio(prices, pref["total_budget"]))
+with open("examples.txt", "r") as f:
+    ctx = f.readlines()[0]
+    msg = eval(ctx)["message"]
+    pref = extract_preferences(msg)
+    prices = analysis1(start_date=pref["start_date"], end_date=pref["end_date"], avoid=pref["avoided_sectors"])
+    print(pack_portfolio(prices, pref["total_budget"]))

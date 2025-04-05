@@ -1,3 +1,8 @@
+import re
+import time
+from dateparser.search import search_dates
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 import yfinance as yf
 import pandas as pd
 
@@ -15,6 +20,9 @@ symbols = {
     "energy": ["FANG", "EXE", "EXEEW", "VNOM", "EXEEL", "PAA"],
     "manufacturing": ["MMM", "CAT", "DE", "AMAT", "GE", "HON"]
 }
+
+MONTHS = ["January", "February", "March", "April", "May", "June", "July",
+          "August", "September", "October", "November", "December"]
 
 def analysis1(start_date, avoid):
     for sector in sectors:
@@ -42,17 +50,6 @@ def analysis(start_date, end_date, avoid):
     print(result)
     return result
 
-
-import re
-import time
-from dateparser.search import search_dates
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-
-MONTHS = ["January", "February", "March", "April", "May", "June", "July",
-          "August", "September", "October", "November", "December"]
-
-KEYWORDS = ["finance"]
 
 def pack_portfolio(stock_prices: dict, budget: int):
     portfoio = {}
@@ -97,8 +94,9 @@ def extract_preferences(message: str):
             split = avoid_phrase.index(".")
             avoided_sectors = [word.lower() for word in avoid_phrase[1:split] if word != ","]
             avoid_list = []
-            for kw in KEYWORDS:
-                if re.match(kw, " ".join(avoided_sectors)):
+            print(" ".join(avoided_sectors))
+            for kw in sectors:
+                if re.search(kw, " ".join(avoided_sectors)):
                     avoid_list.append(kw)
             context_dict["avoided_sectors"] = avoid_list
     # timer_end = time.time()
@@ -117,4 +115,5 @@ with open("examples.txt", "r") as f:
     ctx = f.readlines()[0]
     msg = eval(ctx)["message"]
     pref = extract_preferences(msg)
-analysis(start_date=pref["start_date"], end_date=pref["end_date"], avoid=pref["avoided_sectors"])
+    print(pref)
+# analysis(start_date=pref["start_date"], end_date=pref["end_date"], avoid=pref["avoided_sectors"])

@@ -76,8 +76,8 @@ def extract_preferences(message: str):
     stop_words = set(stopwords.words("english"))
     filtered_words = [word for word in tokens if
                       word.casefold() not in stop_words]
-    context_dict["start_date"] = search_dates(message)[-2][1]
-    context_dict["end_date"] = search_dates(message)[-1][1]
+    context_dict["start_date"] = search_dates(message)[0][1]
+    context_dict["end_date"] = search_dates(message)[1][1]
     for i, word in enumerate(filtered_words):
         if re.match(r"[0-9]+-year-old", word):
             context_dict["age"] = int(word.split("-")[0])
@@ -118,9 +118,10 @@ def compute(message: str):
     pref = extract_preferences(message)
     print(pref)
     prices = analysis1(start_date=pref["start_date"], end_date=pref["end_date"], avoid=pref["avoided_sectors"])
+    print(prices)
     return pack_portfolio(prices, pref["total_budget"])
 
-print(compute("Jeffrey Reilly started investing on April 29, 2011 and ended on August 18, 2013. His hobbies include learning languages, trading and services, and life sciences. He has a total budget of $4507 and a salary of $42232 per annum."))
+print(compute("Christopher Avila is a 67-year-old investor who started investing in 2011-07-01 and ended it on 2014-06-11. His hobbies include learning languages, and he avoids finance or crypto assets. He has a total budget of $23215."))
 # count = 0
 # total = 0
 # with open("examples.txt", "r") as f:

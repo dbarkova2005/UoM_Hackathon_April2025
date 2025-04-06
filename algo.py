@@ -169,7 +169,10 @@ def compute(message: str):
     if (pref):
         to_avoid = [map_categories.get(x, None) for x in pref["dislikes"]]
         prices = analysis1(start_date=pref["start"], end_date=pref["end"], avoid=to_avoid)
-        portfolio_dict = pack_portfolio(filter_by_risk(prices, pref["start"], pref["end"], calculate_risk(pref["age"], pref["employed"])), pref["budget"])
+        if pref["employed"]:
+            portfolio_dict = pack_portfolio(filter_by_risk(prices, pref["start"], pref["end"], calculate_risk(pref["age"], pref["employed"], pref["budget"]/pref["salary"])), pref["budget"])
+        else:
+            portfolio_dict = pack_portfolio(filter_by_risk(prices, pref["start"], pref["end"], calculate_risk(pref["age"], pref["employed"], 0)), pref["budget"])
         if portfolio_dict != None:
             return list(portfolio_dict.items())
         else:
@@ -202,7 +205,11 @@ def filter_by_risk(prices, start_date, end_date, risk_level):
         filtered_risks = dict(risks[first_index:])
         return {p: prices[p] for p in prices if p in filtered_risks} 
 
-def calculate_risk(age, employed):
+def calculate_risk(age, employed, ratio):
+    if ratio > 0.2:
+        return "low"
+    if ratio < 0.05:
+        return "high"
     if not employed:
         return "low"
     elif age == -1:

@@ -107,9 +107,9 @@ while True:
     # Maybe do something with the context to generate this?
     with open("log.txt", "a") as f:
         f.write(eval(context)["message"] + "\n")
-        f.write("PARSED: " + str(extract_preferences(eval(context)["message"])) + "\n")
+        # f.write("PARSED: " + str(extract_preferences(eval(context)["message"])) + "\n")
         portfolio = compute(eval(context)["message"])
-
+        print("PORTF:", portfolio)
         success, response = send_portfolio(portfolio)
         if not success:
             f.write(f"Error: {response}\n")

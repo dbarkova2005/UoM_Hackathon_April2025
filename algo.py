@@ -1,5 +1,6 @@
 import re
 import time
+import json
 from dateparser.search import search_dates
 from dateparser import parse
 from nltk.corpus import stopwords
@@ -14,6 +15,15 @@ RISK_RATIO = 0.3 # remove RISK_RATIO propotion for filtering the risk
 sectors = ["finance", "technology", "life science", "real estate", "transportation", "energy", "manufacturing"]
 tickers = ["JPM", "BAC", "WFC", "PGR", "GS", "AAPL", "MSFT", "NVDA", "GOOG", "AMZN", "ISRG", "AMGN", "GILD", "VRTX", "REGN", "ALNY", "AMT", "PLD", "PSA", "DLR", "UPS", "UNP", "CSX", "LUV", "PAA", "MMM", "CAT", "DE", "AMAT", "GE", "HON"]
 
+map_categories = {"Structured Finance": "finance",
+                  "Finance": "finance",
+                  "Finance or Crypto Assets": "finance",
+                  "Technology": "technology",
+                  "Life Sciences": "life sciences",
+                  "Real Estate and Construction": "real estate",
+                  "Transportation": "transportation",
+                  "Energy": "energy",
+                  "Manufacturing": "manufacturing"}
 
 symbols = {
     "finance": ["JPM", "BAC", "WFC", "PGR", "GS"],
@@ -60,7 +70,7 @@ def analysis1(start_date, end_date, avoid):
             # except Exception as e:
             #     pass
     
-    # print(invest)
+    print("INVEST", invest)
     return invest
 
 
@@ -147,13 +157,16 @@ def extract_preferences(message: str):
         # print(context_dict)
         return False
     
+def read_pref(context):
+    json.loads(context)
 # print(extract_preferences("Andre Webb is 19 years old, he started investing in 2012-04-11, and his investment end date was 2013-10-08. He enjoys hiking, and he avoids structured finance, life sciences, and finance. He has a true salary of $204,950 per year, and a budget of $10570."))
 
 def compute(message: str):
-    pref = extract_preferences(message)
+    pref = read_pref(message)
     if (pref):
-        prices = analysis1(start_date=pref["start_date"], end_date=pref["end_date"], avoid=pref["avoided_sectors"])
-        portfolio_dict = pack_portfolio(filter_by_risk(prices, pref["start_date"], pref["end_date"], calculate_risk(pref["age"])), pref["total_budget"])
+        to_avoid = [map_categories[x] for x in pref["dislikes"]]
+        prices = analysis1(start_date=pref["start"], end_date=pref["end"], avoid=to_avoid)
+        portfolio_dict = pack_portfolio(filter_by_risk(prices, pref["start"], pref["end"], calculate_risk(pref["age"])), pref["budget"])
         return list(portfolio_dict.items())
     else:
         return None
@@ -191,8 +204,6 @@ def calculate_risk(age):
     elif 30 <= age <= 60:
         return "medium" 
     return "low"
-
-print(compute("Lisa Welch is 27 years old and has a total budget of $17669. Her investment start date is 2017-05-14 and her investment end date is 2018-06-04. Her hobbies are learning languages and she avoids life sciences, finance, and crypto."))
 
 # 
 # with open("examples.txt", "r") as f:

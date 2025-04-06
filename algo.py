@@ -10,7 +10,7 @@ import pandas as pd
 import datetime
 
 BUDGET_RATIO = 0.5
-RISK_RATIO = 0.4 # remove RISK_RATIO propotion for filtering the risk
+RISK_RATIO = 0.3 # remove RISK_RATIO propotion for filtering the risk
 
 sectors = ["finance", "technology", "life science", "real estate", "energy", "manufacturing"]
 tickers = ["JPM", "BAC", "WFC", "PGR", "GS", "AAPL", "MSFT", "NVDA", "GOOG", "AMZN", "ISRG", "AMGN", "GILD", "VRTX", "REGN", "ALNY", "AMT", "PLD", "PSA", "DLR", "UPS", "UNP", "CSX", "LUV", "PAA", "MMM", "CAT", "DE", "AMAT", "GE", "HON"]
@@ -49,7 +49,7 @@ def analysis1(start_date, end_date, avoid):
             for ticker in temp_tickers:
                 start_year = int(start_date.split("-")[0])
                 end_year = int(end_date.split("-")[0])
-                if data[ticker][end_year]/data[ticker][start_year] > 1.15:
+                if data[ticker][end_year]/data[ticker][start_year] > 1.6:
                     invest[ticker] = float(data[ticker][start_year])
             # start_date1 = datetime.datetime.strptime(start_date, "%Y-%m-%d")+datetime.timedelta(days=3)
             # end_date1 = datetime.datetime.strptime(end_date, "%Y-%m-%d")+datetime.timedelta(days=3)
@@ -198,13 +198,18 @@ def filter_by_risk(prices, start_date, end_date, risk_level):
         last_index = int((1-RISK_RATIO)*n)
         filtered_risks = dict(risks[:last_index])
         return {p: prices[p] for p in prices if p in filtered_risks}
+    elif risk_level == "medium":
+        index_a = int((RISK_RATIO/2)*n)
+        index_b = int(((1-RISK_RATIO)/2)*n)
+        filtered_risks = dict(risks[index_a:index_b])
+        return {p: prices[p] for p in prices if p in filtered_risks}
     else:
         first_index = int(RISK_RATIO*n)
         filtered_risks = dict(risks[first_index:])
         return {p: prices[p] for p in prices if p in filtered_risks} 
 
 def calculate_risk(age, employed, ratio):
-    if ratio > 0.2:
+    if ratio > 0.3:
         return "low"
     if ratio < 0.05:
         return "high"

@@ -65,7 +65,7 @@ for i in range(0, len(dialogue)):
         tts_config = TTSConfig(
             speed=1,
             lang_code='en', # replace the lang_code with the desired language code.
-            voice_id='fc719704-917e-415c-9048-dd8be1fa8993'  # use client.voices.list() to view all available voices
+            voice_id='99000bca-6657-4d7e-a9c2-f67f478825f8'  # use client.voices.list() to view all available voices
         )
                 
         with AudioPlayer() as player:

@@ -8,8 +8,8 @@ load_dotenv()  # Load variables from .env
 client = Neuphonic(api_key=os.getenv('NEUPHONIC_API_KEY'))
 
 response = client.voices.clone(
-    voice_name='Kaguya',
-    voice_file_path='kaguya_dub.mp3'  # replace with file path to a sample of the voice to clone
+    voice_name='boo',
+    voice_file_path='Shirogane.mp3'  # replace with file path to a sample of the voice to clone
 )
 #C:\Users\Leon Yip Ben Yang\Desktop\UoM_Hackathon_April2025\Shirogane.mp3
 print(response.data)  # this will contain a success message with the voice_id of the cloned voice

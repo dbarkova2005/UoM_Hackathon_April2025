@@ -1,12 +1,16 @@
 import cv2
 import numpy as np
 import easyocr  # Replaced pytesseract with easyocr
+import json
 
 # Initialize EasyOCR reader (English only, CPU mode)
 reader = easyocr.Reader(['en'], gpu=False)  # Add more languages like ['en','ja'] if needed
 
 # Load and preprocess the image (your existing steps)
-image = cv2.imread("manga_panel\love_is_war4.png")
+file_path = "manga_panel\love_is_war7.png"
+
+    
+image = cv2.imread(file_path)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 thresh = cv2.adaptiveThreshold(
     gray, 255, 
@@ -29,4 +33,16 @@ result = reader.readtext(
 
 # Print cleaned output
 print("Extracted Text:")
-print("\n".join(result))  # Preserves original line breaks
+#print("\n".join(result))  # Preserves original line breaks
+
+#print("testing")
+#print(result.lower())
+
+x = []
+for i in range(0, len(result)):
+    x.append(result[i].lower())
+print(x)
+
+# Save to file
+with open("my_data.json", "w") as file:
+    json.dump(x, file)

@@ -67,7 +67,7 @@ def analysis1(start_date, end_date, avoid):
             # except Exception as e:
             #     pass
     
-    print("INVEST", invest)
+    # print("INVEST", invest)
     return invest
 
 
@@ -91,29 +91,32 @@ def pack_portfolio(stock_prices: dict, budget: int):
         return False
 
 def extract_preferences(message: str):
-    context_dict = {"start_date": None, "end_date": None, "age": -1, "total_budget": None, "avoided_sectors": [], 
+    context_dict = {"start": None, "end": None, "age": -1, "budget": None, "dislikes": [], 
+                    "salary": None
                     # "extraction_time": None
                 }
     tokens = word_tokenize(message)
+    print("TOKENS:", tokens)
     stop_words = set(stopwords.words("english"))
     filtered_words = [word for word in tokens if
                       word.casefold() not in stop_words]
+    # print("FILTERED:", filtered_words)
     start_index = " ".join(filtered_words).find("start")
     dates = re.findall(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", " ".join(filtered_words)[start_index:])
     if len(dates) != 2:
         try:
             dates = [d[1] for d in search_dates(" ".join(filtered_words)[start_index:]) if 2000 < d[1].year < 2025]
-        except IndexError:
+        except (IndexError, TypeError):
             # print(filtered_words)
             return False
         if len(dates) != 2:
             # print(filtered_words)
             return False
-        context_dict["start_date"] = dates[0]
-        context_dict["end_date"] = dates[1]
+        context_dict["start"] = dates[0]
+        context_dict["end"] = dates[1]
     else:
-        context_dict["start_date"] = datetime.datetime.strptime(dates[0], "%Y-%m-%d")
-        context_dict["end_date"] = datetime.datetime.strptime(dates[1], "%Y-%m-%d")
+        context_dict["start"] = datetime.datetime.strptime(dates[0], "%Y-%m-%d")
+        context_dict["end"] = datetime.datetime.strptime(dates[1], "%Y-%m-%d")
     for i, word in enumerate(filtered_words):
         if re.match(r"[0-9]+-year-old", word):
             context_dict["age"] = int(word.split("-")[0])
@@ -124,31 +127,32 @@ def extract_preferences(message: str):
             budget_val = int([b for b in word_tokenize(budget_phrase) if b.isnumeric()][0])
             print(budget_val)
             if "per year" in budget_phrase:
-                difference = context_dict["end_date"] - context_dict["start_date"]
+                difference = context_dict["end"] - context_dict["start"]
                 y_diff = (difference.days + difference.seconds/86400)/365.2425
-                context_dict["total_budget"] = int(budget_val*y_diff)
+                context_dict["budget"] = int(budget_val*y_diff)
             else:
-                context_dict["total_budget"] = budget_val
+                context_dict["budget"] = budget_val
         elif word == "total" and filtered_words[i+1] == "investment":
             if "budget" in filtered_words:
                 return False
             budget_phrase = filtered_words[i:i+5]
-            context_dict["total_budget"] = int(int(budget_phrase[3]))
+            context_dict["budget"] = int(int(budget_phrase[3]))
         elif word == "avoids" or word == "avoid":
             avoid_phrase = filtered_words[i:]
             split = avoid_phrase.index(".")
-            avoided_sectors = [word.lower() for word in avoid_phrase[1:split] if word != ","]
-            # print(avoided_sectors)
+            dislikes = [word.lower() for word in avoid_phrase[1:split] if word != ","]
+            # print(dislikes)
             avoid_list = []
             for kw in sectors:
-                if re.search(kw, " ".join(avoided_sectors)):
+                if re.search(kw, " ".join(dislikes)):
                     avoid_list.append(kw)
-            context_dict["avoided_sectors"] = avoid_list
+            context_dict["dislikes"] = avoid_list
+        
     # timer_end = time.time()
     # context_dict["extraction_time"] = timer_end-timer_start
-    # print(context_dict["start_date"])
-    context_dict["start_date"] = context_dict["start_date"].strftime("%Y-%m-%d")
-    context_dict["end_date"] = context_dict["end_date"].strftime("%Y-%m-%d")
+    # print(context_dict["start"])
+    context_dict["start"] = context_dict["start"].strftime("%Y-%m-%d")
+    context_dict["end"] = context_dict["end"].strftime("%Y-%m-%d")
     if not any([d == None for d in list(context_dict.values())]):
         # print(context_dict)
         return context_dict
@@ -159,6 +163,7 @@ def extract_preferences(message: str):
     
 def read_pref(context):
     return json.loads(context)
+ 
 # print(extract_preferences("Andre Webb is 19 years old, he started investing in 2012-04-11, and his investment end date was 2013-10-08. He enjoys hiking, and he avoids structured finance, life sciences, and finance. He has a true salary of $204,950 per year, and a budget of $10570."))
 
 
@@ -179,7 +184,7 @@ def calculate_risk(age, employed, ratio):
 
 
 def filter_by_risk(prices, start_date, end_date, risk_level):
-    print("PRICES:", prices)
+    # print("PRICES:", prices)
     if risk_level == "medium":
         return prices
     risks = {}
@@ -192,7 +197,7 @@ def filter_by_risk(prices, start_date, end_date, risk_level):
     for ticker in risks:
         risks[ticker] = sum(risks[ticker])/len(risks[ticker])
     risks = sorted(list(risks.items()), key=lambda x: x[1])
-    print("RISKS:", risks)
+    # print("RISKS:", risks)
     n = len(risks)
     if risk_level == "low":
         last_index = int((1-RISK_RATIO)*n)
@@ -229,11 +234,12 @@ def compute(message: str):
 
 
 # 
-# with open("examples.txt", "r") as f:
-#     with open("output.txt", "a") as g:
-#         ctxs = f.readlines()
-#         for ctx in ctxs:
-#             msg = eval(ctx)["message"]
-#             pref = extract_preferences(msg)
-#             prices = analysis1(start_date=pref["start_date"], end_date=pref["end_date"], avoid=pref["avoided_sectors"])
-#             g.write(str(pack_portfolio(prices, pref["total_budget"])) + "\n")
+with open("examples.txt", "r") as f:
+    with open("output.txt", "a") as g:
+        ctxs = f.readlines()
+        for ctx in ctxs:
+            msg = eval(ctx)["message"]
+            pref = extract_preferences(msg)
+            print(pref)
+            # prices = analysis1(start_date=pref["start"], end_date=pref["end"], avoid=pref["dislikes"])
+            # g.write(str(pack_portfolio(prices, pref["budget"])) + "\n")

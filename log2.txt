@@ -5161,3 +5161,380 @@ BUDG/SAL:0.04307108807751757
 RISK:high
 PORTF:None
 Evaluation response: Not sent
+{"timestamp":"2025-04-06T04:27:38.865743777Z","start":"2016-06-26","end":"2017-05-14","age":25,"employed":true,"salary":36260,"budget":3125,"dislikes":[]}
+BUDG/SAL:0.08618312189740761
+RISK:high
+PORTF:[('AMAT', 30), ('BAC', 30), ('NVDA', 31)]
+Evaluation response: {"passed": true, "profit": 1053.1553000000001, "points": 622.6593789966828, "error": ""}
+
+{"timestamp":"2025-04-06T04:27:42.528547866Z","start":"2013-12-15","end":"2015-08-22","age":56,"employed":true,"salary":14791,"budget":1711,"dislikes":[]}
+BUDG/SAL:0.11567845311337976
+RISK:medium
+PORTF:[('REGN', 1), ('VRTX', 2), ('ALNY', 2), ('GILD', 2), ('AMZN', 2), ('AAPL', 1), ('LUV', 1), ('NVDA', 19)]
+Evaluation response: {"passed": true, "profit": 565.1425999999998, "points": 477.9905888513051, "error": ""}
+
+{"timestamp":"2025-04-06T04:27:47.803716424Z","start":"2019-06-26","end":"2020-10-28","age":62,"employed":true,"salary":62162,"budget":30209,"dislikes":[]}
+BUDG/SAL:0.4859721373186191
+RISK:low
+PORTF:[('AAPL', 210)]
+Evaluation response: {"passed": true, "profit": 12862.5, "points": 719.3474414168871, "error": ""}
+
+{"timestamp":"2025-04-06T04:27:50.39437617Z","start":"2011-04-02","end":"2012-10-20","age":57,"employed":true,"salary":203152,"budget":67856,"dislikes":["Finance or Crypto Assets","Manufacturing"]}
+BUDG/SAL:0.33401590926990626
+RISK:low
+PORTF:[('REGN', 465)]
+Evaluation response: {"passed": true, "profit": 52456.65000000001, "points": 823.098142021675, "error": ""}
+
+{"timestamp":"2025-04-06T04:27:53.525683214Z","start":"2018-11-19","end":"2021-04-24","age":75,"employed":true,"salary":240989,"budget":98137,"dislikes":[]}
+BUDG/SAL:0.4072260559610605
+RISK:low
+PORTF:[('GS', 32), ('ISRG', 32), ('DE', 32), ('AMT', 32), ('UNP', 32), ('MSFT', 32), ('AMZN', 31), ('GOOG', 31), ('PLD', 31), ('PGR', 31)]
+Evaluation response: {"passed": true, "profit": 33749.29509999999, "points": 771.019973260886, "error": ""}
+
+{"timestamp":"2025-04-06T04:28:00.339251082Z","start":"2016-02-11","end":"2017-11-09","age":31,"employed":true,"salary":9630,"budget":1868,"dislikes":["International Corp Fin"]}
+BUDG/SAL:0.19397715472481827
+RISK:medium
+PORTF:[('AMAT', 15), ('BAC', 14), ('CSX', 14), ('NVDA', 18)]
+Evaluation response: {"passed": true, "profit": 1018.3889999999999, "points": 579.9558243279209, "error": ""}
+
+{"timestamp":"2025-04-06T04:28:05.249091288Z","start":"2016-06-18","end":"2016-08-24","age":56,"employed":true,"salary":167447,"budget":35973,"dislikes":["Life Sciences"]}
+BUDG/SAL:0.2148321558463275
+RISK:medium
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T04:28:05.550491651Z","start":"2009-11-09","end":"2010-06-05","age":40,"employed":true,"salary":199173,"budget":73578,"dislikes":["Crypto Assets","Trade and Services","Structured Finance"]}
+BUDG/SAL:0.3694175415342441
+RISK:low
+PORTF:[('CAT', 791), ('AAPL', 791)]
+Error: Error - something went wrong when requesting [CODE: 500]: Error during unmarshalling.
+
+Evaluation response: Error - something went wrong when requesting [CODE: 500]: Error during unmarshalling.
+
+{"timestamp":"2025-04-06T04:30:04.26557731Z","start":"2023-07-16","end":"2024-03-21","age":60,"employed":true,"salary":27961,"budget":3087,"dislikes":["Finance or Crypto Assets","Life Sciences","Industrial Applications and Services","Trade and Services","Technology"]}
+BUDG/SAL:0.11040377668895962
+RISK:medium
+PORTF:[('GE', 13)]
+Evaluation response: {"passed": true, "profit": 679.5698, "points": 563.8110161740881, "error": ""}
+
+{"timestamp":"2025-04-06T04:30:06.74228998Z","start":"2017-01-02","end":"2017-04-23","age":37,"employed":true,"salary":253760,"budget":15861,"dislikes":["Life Sciences"]}
+BUDG/SAL:0.06250394073139975
+RISK:medium
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T04:30:06.932141861Z","start":"2016-06-19","end":"2017-12-03","age":22,"employed":true,"salary":162941,"budget":64955,"dislikes":["Energy and Transportation","Finance or Crypto Assets"]}
+BUDG/SAL:0.39864122596522666
+RISK:low
+PORTF:[('AMAT', 1015)]
+Evaluation response: {"passed": true, "profit": 28704.199999999993, "points": 788.2632333105029, "error": ""}
+
+{"timestamp":"2025-04-06T04:30:11.045888178Z","start":"2010-09-10","end":"2012-12-05","age":20,"employed":false,"salary":0,"budget":1317,"dislikes":[]}
+RISK:high
+PORTF:[('ISRG', 7), ('REGN', 6), ('AAPL', 7)]
+Evaluation response: {"passed": true, "profit": 1213.2771999999998, "points": 573.508806213854, "error": ""}
+
+{"timestamp":"2025-04-06T04:30:14.14819597Z","start":"2011-01-11","end":"2013-10-25","age":24,"employed":false,"salary":0,"budget":25533,"dislikes":[]}
+RISK:high
+PORTF:[('REGN', 60), ('AMGN', 60), ('UNP', 60), ('GILD', 59), ('ALNY', 60)]
+Evaluation response: {"passed": true, "profit": 29099.005, "points": 776.8138122487946, "error": ""}
+
+{"timestamp":"2025-04-06T04:30:18.520790423Z","start":"2024-12-03","end":"2024-12-12","age":79,"employed":false,"salary":0,"budget":6694,"dislikes":[]}
+RISK:high
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T04:30:18.68863628Z","start":"2024-07-14","end":"2024-10-17","age":79,"employed":false,"salary":0,"budget":7656,"dislikes":["Technology"]}
+RISK:high
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T04:30:18.844530759Z","start":"2020-12-23","end":"2021-07-09","age":49,"employed":true,"salary":173995,"budget":59191,"dislikes":["Energy and Transportation"]}
+BUDG/SAL:0.34018793643495504
+RISK:low
+PORTF:[('GS', 65), ('GOOG', 66), ('AMAT', 65)]
+Evaluation response: {"passed": true, "profit": 13636.762999999995, "points": 793.4231955547375, "error": ""}
+
+{"timestamp":"2025-04-06T04:30:23.165365214Z","start":"2010-11-01","end":"2011-05-17","age":68,"employed":true,"salary":2030,"budget":100,"dislikes":["Energy and Transportation","Life Sciences"]}
+BUDG/SAL:0.04926108374384237
+RISK:high
+PORTF:[('REGN', 1)]
+Evaluation response: {"passed": true, "profit": 27.520000000000003, "points": -31.377501884440292, "error": ""}
+
+{"timestamp":"2025-04-06T04:30:26.420963793Z","start":"2011-12-19","end":"2014-11-22","age":22,"employed":false,"salary":0,"budget":1857,"dislikes":[]}
+RISK:high
+PORTF:[('REGN', 3), ('VRTX', 2), ('AMGN', 2), ('JPM', 3), ('MSFT', 2), ('WFC', 2), ('GILD', 2), ('GOOG', 2), ('AAPL', 2), ('AMAT', 2), ('AMZN', 2), ('LUV', 2), ('ALNY', 2), ('BAC', 2)]
+Evaluation response: {"passed": true, "profit": 2087.8512, "points": 583.3283435634605, "error": ""}
+
+{"timestamp":"2025-04-06T04:30:34.941879288Z","start":"2008-11-11","end":"2010-01-20","age":58,"employed":true,"salary":102081,"budget":16367,"dislikes":["Crypto Assets","Energy and Transportation","Industrial Applications and Services","Structured Finance"]}
+BUDG/SAL:0.16033346068318297
+RISK:medium
+PORTF:[('DLR', 212), ('AAPL', 211), ('AMZN', 211)]
+Evaluation response: {"passed": true, "profit": 6120.981000000001, "points": 671.4563626180815, "error": ""}
+
+{"timestamp":"2025-04-06T04:30:38.59019326Z","start":"2017-04-07","end":"2019-05-04","age":47,"employed":true,"salary":49079,"budget":15257,"dislikes":["Real Estate and Construction","Life Sciences","Manufacturing"]}
+BUDG/SAL:0.31086615456712646
+RISK:low
+PORTF:[('AMZN', 63), ('PGR', 62)]
+Evaluation response: {"passed": true, "profit": 5541.557000000002, "points": 677.3199100403701, "error": ""}
+
+{"timestamp":"2025-04-06T04:30:43.940140373Z","start":"2021-04-20","end":"2023-12-22","age":40,"employed":true,"salary":90283,"budget":14885,"dislikes":["Industrial Applications and Services","Manufacturing","Trade and Services","Structured Finance","Life Sciences"]}
+BUDG/SAL:0.16487046287783969
+RISK:medium
+PORTF:[('VRTX', 22), ('NVDA', 26), ('PAA', 27)]
+Evaluation response: {"passed": true, "profit": 5111.266200000001, "points": -126.5480442048528, "error": ""}
+
+{"timestamp":"2025-04-06T04:30:47.820563788Z","start":"2020-10-11","end":"2023-05-04","age":78,"employed":true,"salary":154623,"budget":31299,"dislikes":["Energy and Transportation","Industrial Applications and Services"]}
+BUDG/SAL:0.20242137327564463
+RISK:low
+PORTF:[('MSFT', 12), ('GS', 12), ('DE', 12), ('CAT', 12), ('AAPL', 12), ('PGR', 12), ('GOOG', 11)]
+Evaluation response: {"passed": true, "profit": 5599.477500000003, "points": 635.4083658995797, "error": ""}
+
+{"timestamp":"2025-04-06T04:30:52.867098345Z","start":"2023-04-06","end":"2023-08-03","age":22,"employed":true,"salary":142195,"budget":28605,"dislikes":["Manufacturing"]}
+BUDG/SAL:0.2011674109497521
+RISK:high
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T04:30:53.040160396Z","start":"2020-11-21","end":"2022-01-12","age":39,"employed":true,"salary":10062,"budget":4030,"dislikes":["Manufacturing","Finance or Crypto Assets"]}
+BUDG/SAL:0.4005167958656331
+RISK:low
+PORTF:[('PSA', 5), ('AAPL', 5)]
+Evaluation response: {"passed": true, "profit": 1049.9, "points": 594.2693267079771, "error": ""}
+
+{"timestamp":"2025-04-06T04:30:55.936684891Z","start":"2015-01-16","end":"2016-02-27","age":43,"employed":true,"salary":113883,"budget":31067,"dislikes":["International Corp Fin","Real Estate and Construction","Technology","Finance"]}
+BUDG/SAL:0.2727975202620233
+RISK:medium
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T04:30:56.092650311Z","start":"2017-07-06","end":"2019-11-14","age":27,"employed":true,"salary":124772,"budget":45634,"dislikes":[]}
+BUDG/SAL:0.365739108133235
+RISK:low
+PORTF:[('AMT', 83), ('AMZN', 82), ('PGR', 82)]
+Evaluation response: {"passed": true, "profit": 12237.006000000005, "points": 720.6707368045285, "error": ""}
+
+{"timestamp":"2025-04-06T04:31:00.401861384Z","start":"2012-01-02","end":"2014-09-14","age":30,"employed":true,"salary":76057,"budget":4259,"dislikes":[]}
+BUDG/SAL:0.05599747557752738
+RISK:medium
+PORTF:[('REGN', 3), ('GS', 3), ('AMGN', 3), ('MMM', 3), ('VRTX', 3), ('UNP', 2), ('HON', 2), ('WFC', 2), ('GILD', 2), ('GOOG', 2), ('ALNY', 2), ('AMAT', 3), ('LUV', 2), ('BAC', 2)]
+Evaluation response: {"passed": true, "profit": 2201.9314999999997, "points": 593.5235168368438, "error": ""}
+
+{"timestamp":"2025-04-06T04:31:08.75180018Z","start":"2018-06-05","end":"2018-07-02","age":75,"employed":true,"salary":181233,"budget":79050,"dislikes":["Crypto Assets","International Corp Fin"]}
+BUDG/SAL:0.43617884160169507
+RISK:low
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T04:31:08.935095052Z","start":"2011-11-04","end":"2012-01-10","age":54,"employed":true,"salary":107122,"budget":2092,"dislikes":["Energy and Transportation","Finance or Crypto Assets","Structured Finance","Crypto Assets"]}
+BUDG/SAL:0.01952913500494763
+RISK:high
+PORTF:[('REGN', 12), ('ALNY', 13)]
+Evaluation response: {"passed": true, "profit": 230.53999999999996, "points": 502.1711207835518, "error": ""}
+
+{"timestamp":"2025-04-06T04:31:11.497836717Z","start":"2007-06-23","end":"2008-10-02","age":24,"employed":true,"salary":24900,"budget":2376,"dislikes":["Manufacturing"]}
+BUDG/SAL:0.09542168674698795
+RISK:high
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T04:31:11.676268629Z","start":"2021-06-27","end":"2023-02-17","age":29,"employed":true,"salary":80460,"budget":19917,"dislikes":["Industrial Applications and Services","Crypto Assets"]}
+BUDG/SAL:0.24753914988814318
+RISK:high
+PORTF:[('VRTX', 30), ('NVDA', 31), ('PAA', 31)]
+Evaluation response: {"passed": true, "profit": 2976.0430000000006, "points": 596.3711355016353, "error": ""}
+
+{"timestamp":"2025-04-06T04:31:16.016495077Z","start":"2015-07-23","end":"2017-11-07","age":75,"employed":true,"salary":190180,"budget":74521,"dislikes":["Structured Finance","Industrial Applications and Services","Finance"]}
+BUDG/SAL:0.3918445683037123
+RISK:low
+PORTF:[('ISRG', 170), ('DLR', 170), ('MSFT', 169), ('CSX', 172)]
+Evaluation response: {"passed": true, "profit": 28926.071999999996, "points": -79.25240888290142, "error": ""}
+
+{"timestamp":"2025-04-06T04:31:20.619855168Z","start":"2008-05-23","end":"2011-04-15","age":24,"employed":true,"salary":181458,"budget":28585,"dislikes":["Life Sciences","Structured Finance","Manufacturing","Finance or Crypto Assets","Real Estate and Construction"]}
+BUDG/SAL:0.15752956607038543
+RISK:high
+PORTF:[('VRTX', 190), ('REGN', 190), ('AAPL', 190), ('AMZN', 190)]
+Evaluation response: {"passed": true, "profit": 11186.744000000002, "points": -136.46479000705506, "error": ""}
+
+{"timestamp":"2025-04-06T04:31:24.20304188Z","start":"2020-09-04","end":"2022-11-26","age":65,"employed":true,"salary":29584,"budget":2206,"dislikes":[]}
+BUDG/SAL:0.07456733369388859
+RISK:low
+PORTF:[('GS', 1), ('DE', 1), ('PSA', 1), ('AAPL', 2)]
+Evaluation response: {"passed": true, "profit": 548.8200000000003, "points": 493.70327357400475, "error": ""}
+
+{"timestamp":"2025-04-06T04:31:27.993889201Z","start":"2007-10-16","end":"2009-07-14","age":20,"employed":true,"salary":156652,"budget":9920,"dislikes":["Crypto Assets","Industrial Applications and Services","Real Estate and Construction","Technology"]}
+BUDG/SAL:0.06332507724127365
+RISK:high
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T04:31:28.168963063Z","start":"2017-08-13","end":"2020-03-01","age":47,"employed":false,"salary":0,"budget":62107,"dislikes":["Structured Finance"]}
+RISK:high
+PORTF:[('VRTX', 35), ('DE', 35), ('ISRG', 35), ('ALNY', 36), ('MSFT', 35), ('AMZN', 35), ('PLD', 35), ('AAPL', 35), ('NVDA', 36)]
+Evaluation response: {"passed": true, "profit": 13816.393799999998, "points": 702.7058621977135, "error": ""}
+
+{"timestamp":"2025-04-06T04:31:33.28834205Z","start":"2012-03-11","end":"2013-09-06","age":66,"employed":true,"salary":127220,"budget":10325,"dislikes":["Real Estate and Construction","Life Sciences","Technology","Crypto Assets"]}
+BUDG/SAL:0.0811586228580412
+RISK:low
+PORTF:[('REGN', 24), ('GILD', 23)]
+Evaluation response: {"passed": true, "profit": 4653.0, "points": -131.30533262215118, "error": ""}
+
+{"timestamp":"2025-04-06T04:31:37.745653642Z","start":"2014-10-02","end":"2017-03-29","age":47,"employed":true,"salary":176283,"budget":20514,"dislikes":["Structured Finance","Energy and Transportation","International Corp Fin","Life Sciences","Crypto Assets"]}
+BUDG/SAL:0.11636970099215466
+RISK:medium
+PORTF:[('ISRG', 30), ('DLR', 31), ('MSFT', 30), ('PLD', 30), ('GOOG', 30), ('AAPL', 30), ('AMAT', 30), ('AMZN', 30), ('NVDA', 37)]
+Evaluation response: {"passed": true, "profit": 5479.713900000001, "points": 649.3659583175939, "error": ""}
+
+{"timestamp":"2025-04-06T04:31:44.834576593Z","start":"2015-12-22","end":"2017-04-23","age":52,"employed":true,"salary":174709,"budget":62877,"dislikes":["Trade and Services","International Corp Fin","Finance","Industrial Applications and Services"]}
+BUDG/SAL:0.3598955978226651
+RISK:low
+PORTF:[('ISRG', 143), ('DLR', 144), ('MSFT', 143), ('CSX', 143)]
+Evaluation response: {"passed": true, "profit": 12511.510000000006, "points": -74.24619668022642, "error": ""}
+
+{"timestamp":"2025-04-06T04:31:49.472082358Z","start":"2024-10-04","end":"2024-10-22","age":39,"employed":true,"salary":18515,"budget":4582,"dislikes":["Real Estate and Construction","Technology","Structured Finance","International Corp Fin"]}
+BUDG/SAL:0.24747502025384824
+RISK:medium
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T04:31:49.624155813Z","start":"2013-10-23","end":"2015-09-22","age":22,"employed":true,"salary":49671,"budget":6105,"dislikes":[]}
+BUDG/SAL:0.12290873950594915
+RISK:high
+PORTF:[('REGN', 5), ('VRTX', 5), ('ALNY', 6), ('GILD', 5), ('AMZN', 6), ('LUV', 5)]
+Evaluation response: {"passed": true, "profit": 1931.3332, "points": 553.5301956582169, "error": ""}
+
+{"timestamp":"2025-04-06T04:31:54.03599292Z","start":"2021-09-25","end":"2021-10-02","age":19,"employed":true,"salary":123767,"budget":11740,"dislikes":["Crypto Assets","Manufacturing","Technology"]}
+BUDG/SAL:0.09485565619268464
+RISK:high
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T04:31:54.196878308Z","start":"2014-07-25","end":"2014-10-02","age":33,"employed":true,"salary":3554,"budget":1775,"dislikes":["Trade and Services"]}
+BUDG/SAL:0.4994372537985369
+RISK:low
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T04:31:54.369164123Z","start":"2019-12-26","end":"2022-01-11","age":69,"employed":true,"salary":180924,"budget":75687,"dislikes":[]}
+BUDG/SAL:0.4183358758373682
+RISK:low
+PORTF:[('REGN', 21), ('PSA', 21), ('GS', 21), ('DE', 21), ('MSFT', 20), ('CAT', 20), ('PLD', 20), ('PGR', 20), ('GOOG', 20)]
+Evaluation response: {"passed": true, "profit": 24422.660000000003, "points": 752.3402024335821, "error": ""}
+
+{"timestamp":"2025-04-06T04:31:59.35402468Z","start":"2018-09-02","end":"2018-12-28","age":41,"employed":true,"salary":57674,"budget":3588,"dislikes":[]}
+BUDG/SAL:0.06221174185941672
+RISK:medium
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T04:31:59.517294082Z","start":"2024-11-09","end":"2025-02-07","age":64,"employed":true,"salary":154099,"budget":31407,"dislikes":["International Corp Fin"]}
+BUDG/SAL:0.20381053738181298
+RISK:low
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T04:31:59.691327757Z","start":"2024-11-03","end":"2024-12-29","age":18,"employed":true,"salary":185273,"budget":21705,"dislikes":["Finance or Crypto Assets","Trade and Services","Technology"]}
+BUDG/SAL:0.11715144678393506
+RISK:high
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T04:31:59.858838341Z","start":"2015-06-24","end":"2016-02-16","age":41,"employed":false,"salary":0,"budget":8256,"dislikes":["Technology","Real Estate and Construction"]}
+RISK:high
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T04:32:00.026719794Z","start":"2016-11-27","end":"2017-04-03","age":72,"employed":true,"salary":205915,"budget":65239,"dislikes":["Finance","Real Estate and Construction"]}
+BUDG/SAL:0.3168249034795911
+RISK:low
+PORTF:[('AMAT', 744), ('CSX', 744)]
+Evaluation response: {"passed": true, "profit": 8203.790400000002, "points": 762.4358115677151, "error": ""}
+
+{"timestamp":"2025-04-06T04:32:03.455764877Z","start":"2011-12-27","end":"2012-02-03","age":24,"employed":true,"salary":165789,"budget":28714,"dislikes":["Technology","Finance","Structured Finance"]}
+BUDG/SAL:0.17319605040141384
+RISK:high
+PORTF:[('REGN', 168), ('ALNY', 168)]
+Evaluation response: {"passed": true, "profit": 7721.280000000001, "points": 1473.8123834156206, "error": ""}
+
+{"timestamp":"2025-04-06T04:32:05.935395382Z","start":"2016-06-27","end":"2017-11-04","age":67,"employed":true,"salary":70878,"budget":43674,"dislikes":["Structured Finance","Manufacturing","Life Sciences"]}
+BUDG/SAL:0.6161855582832473
+RISK:low
+PORTF:[('CSX', 1842)]
+{"timestamp":"2025-04-06T05:25:44.112186349Z","start":"2019-02-11","end":"2021-10-28","age":36,"employed":true,"salary":122494,"budget":17258,"dislikes":["International Corp Fin","Manufacturing"]}
+BUDG/SAL:0.14088853331591752
+RISK:medium
+PORTF:[('ISRG', 5), ('GS', 5), ('PSA', 5), ('AMT', 5), ('MSFT', 5), ('UPS', 5), ('JPM', 4), ('ALNY', 4), ('AMZN', 4), ('PLD', 4), ('GOOG', 5), ('AAPL', 4), ('BAC', 4), ('NVDA', 4)]
+Evaluation response: {"passed": true, "profit": 7141.281799999999, "points": -66.62865422366598, "error": ""}
+
+{"timestamp":"2025-04-06T05:26:14.359047915Z","start":"2007-11-19","end":"2009-07-20","age":20,"employed":true,"salary":74947,"budget":23393,"dislikes":["Manufacturing"]}
+BUDG/SAL:0.3121272365805169
+RISK:low
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T05:26:20.264916003Z","start":"2010-04-10","end":"2010-06-28","age":41,"employed":true,"salary":199067,"budget":117958,"dislikes":["Manufacturing","Industrial Applications and Services","Crypto Assets","Trade and Services"]}
+BUDG/SAL:0.5925542656492537
+RISK:low
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T05:26:23.401580251Z","start":"2021-08-12","end":"2023-09-21","age":28,"employed":true,"salary":180384,"budget":51343,"dislikes":["Life Sciences","Technology","Structured Finance","Industrial Applications and Services"]}
+BUDG/SAL:0.28463167464963635
+RISK:high
+PORTF:[('VRTX', 87), ('PAA', 101)]
+Evaluation response: {"passed": true, "profit": 14441.509999999998, "points": -70.34479714110279, "error": ""}
+
+{"timestamp":"2025-04-06T05:26:32.967223392Z","start":"2024-05-30","end":"2024-06-16","age":36,"employed":true,"salary":174805,"budget":25361,"dislikes":["Industrial Applications and Services"]}
+BUDG/SAL:0.1450816624238437
+RISK:medium
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T05:26:52.367431227Z","start":"2022-01-18","end":"2022-10-30","age":54,"employed":true,"salary":114144,"budget":19026,"dislikes":["Life Sciences"]}
+BUDG/SAL:0.16668418839360807
+RISK:medium
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T05:26:54.79525979Z","start":"2013-10-17","end":"2014-01-12","age":34,"employed":true,"salary":108271,"budget":31019,"dislikes":["Energy and Transportation","Life Sciences","Finance or Crypto Assets","Technology"]}
+BUDG/SAL:0.28649407505241475
+RISK:medium
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T05:26:56.127883059Z","start":"2024-01-19","end":"2024-09-11","age":20,"employed":true,"salary":3870,"budget":623,"dislikes":["Energy and Transportation","Manufacturing","Technology"]}
+BUDG/SAL:0.16098191214470284
+RISK:high
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T05:26:58.462400786Z","start":"2008-10-29","end":"2010-08-21","age":54,"employed":true,"salary":48214,"budget":6864,"dislikes":["Energy and Transportation","Real Estate and Construction","Finance or Crypto Assets"]}
+BUDG/SAL:0.1423652880905961
+RISK:medium
+PORTF:[('CAT', 30), ('DE', 29), ('ISRG', 29), ('AAPL', 32), ('AMZN', 32)]
+Evaluation response: {"passed": true, "profit": 2513.1571999999996, "points": 587.2475276422393, "error": ""}
+
+{"timestamp":"2025-04-06T05:27:16.876535236Z","start":"2015-09-12","end":"2016-06-06","age":57,"employed":true,"salary":121168,"budget":10364,"dislikes":["Structured Finance","International Corp Fin","Trade and Services","Manufacturing"]}
+BUDG/SAL:0.08553413442493067
+RISK:medium
+PORTF:[('DLR', 79), ('NVDA', 142)]
+Evaluation response: {"passed": true, "profit": 3027.925400000001, "points": -66.29624345251754, "error": ""}
+
+{"timestamp":"2025-04-06T05:29:05.713100421Z","start":"2021-04-09","end":"2023-02-24","age":39,"employed":false,"salary":0,"budget":26527,"dislikes":["Life Sciences","Crypto Assets","Manufacturing"]}
+RISK:high
+PORTF:[('PAA', 1365)]
+Evaluation response: {"passed": true, "profit": 5569.200000000001, "points": 636.3867667913024, "error": ""}
+
+{"timestamp":"2025-04-06T05:29:09.153384632Z","start":"2014-04-16","end":"2015-03-17","age":35,"employed":true,"salary":63531,"budget":885,"dislikes":["Energy and Transportation","Structured Finance","Trade and Services"]}
+BUDG/SAL:0.013930207300373046
+RISK:high
+PORTF:[('VRTX', 2), ('ALNY', 2), ('AAPL', 3)]
+{"timestamp":"2025-04-06T05:29:12.898199716Z","start":"2007-02-10","end":"2009-10-14","age":65,"employed":true,"salary":22829,"budget":6598,"dislikes":["Trade and Services","Finance or Crypto Assets","Manufacturing"]}
+BUDG/SAL:0.2890183538481756
+RISK:low
+PORTF:[('AAPL', 507), ('AMZN', 507)]
+Evaluation response: {"passed": true, "profit": 3412.5663, "points": -62.906476067148574, "error": ""}
+
+{"timestamp":"2025-04-06T05:29:16.666087496Z","start":"2018-11-25","end":"2019-07-10","age":32,"employed":true,"salary":263491,"budget":28409,"dislikes":[]}
+BUDG/SAL:0.10781772432454999
+RISK:medium
+PORTF:None
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T05:29:17.13113196Z","start":"2009-08-30","end":"2012-08-08","age":61,"employed":true,"salary":95868,"budget":38848,"dislikes":[]}
+BUDG/SAL:0.4052238494596737
+RISK:low
+PORTF:[('GE', 57), ('PSA', 56), ('DE', 57), ('AMT', 56), ('HON', 56), ('DLR', 56), ('UNP', 56), ('PLD', 56), ('PAA', 56), ('CSX', 57)]
+{"timestamp":"2025-04-06T05:29:42.85081613Z","start":"2019-05-22","end":"2021-12-27","age":40,"employed":true,"salary":265266,"budget":48903,"dislikes":[]}
+BUDG/SAL:0.18435457239148628
+RISK:medium
+PORTF:[('REGN', 11), ('PSA', 10), ('GS', 10), ('ISRG', 10), ('DE', 10), ('MSFT', 10), ('CAT', 10), ('AMZN', 10), ('UPS', 10), ('ALNY', 10), ('PLD', 10), ('GOOG', 10), ('AAPL', 10), ('AMAT', 11), ('BAC', 10), ('NVDA', 11)]
+Evaluation response: {"passed": true, "profit": 21705.885, "points": 745.7410176428161, "error": ""}
+
+{"timestamp":"2025-04-06T05:29:49.982345299Z","start":"2016-09-15","end":"2017-03-28","age":44,"employed":true,"salary":82661,"budget":13712,"dislikes":["Life Sciences","Technology"]}
+BUDG/SAL:0.1658823387087018
+RISK:medium
+PORTF:[('CSX', 554)]
+Evaluation response: {"passed": true, "profit": 3344.331799999999, "points": 692.7214260170791, "error": ""}
+
+{"timestamp":"2025-04-06T05:29:52.674000987Z","start":"2009-03-24","end":"2009-12-29","age":44,"employed":true,"salary":190359,"budget":14230,"dislikes":["Crypto Assets","Finance or Crypto Assets","Industrial Applications and Services","Technology","Energy and Transportation"]}
+BUDG/SAL:0.07475349208600592
+RISK:medium
+PORTF:[('GE', 39), ('MMM', 39), ('DE', 38), ('CAT', 38), ('DLR', 38), ('ISRG', 39), ('PLD', 38)]

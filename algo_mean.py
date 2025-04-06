@@ -43,13 +43,15 @@ def analysis1(start_date, end_date, avoid):
             continue
         else:
             temp_tickers = symbols[sector]
-            with open("mean.txt", "r") as f:
+            with open("mean_month.txt", "r") as f:
                 data = eval(f.readline())
             for ticker in temp_tickers:
                 start_year = int(start_date.split("-")[0])
+                start_month = int(start_date.split("-")[1]) - 1
                 end_year = int(end_date.split("-")[0])
-                if data[ticker][end_year]/data[ticker][start_year] > 1.6:
-                    invest[ticker] = float(data[ticker][start_year])
+                end_month = int(end_date.split("-")[1]) - 1
+                if data[ticker][end_year][end_month]/data[ticker][start_year][start_month] > 1.6:
+                    invest[ticker] = float(data[ticker][start_year][start_month])
             # start_date1 = datetime.datetime.strptime(start_date, "%Y-%m-%d")+datetime.timedelta(days=3)
             # end_date1 = datetime.datetime.strptime(end_date, "%Y-%m-%d")+datetime.timedelta(days=3)
             # try:

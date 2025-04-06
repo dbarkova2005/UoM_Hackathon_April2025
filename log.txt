@@ -448,3 +448,53 @@ Evaluation response: Not sent
 Evaluation response: Not sent
 {"timestamp":"2025-04-06T02:45:24.915742836Z","start":"2007-02-08","end":"2007-08-16","age":58,"employed":true,"salary":15591,"budget":1152,"dislikes":["International Corp Fin","Energy and Transportation"]}
 Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:15.23868333Z","start":"2018-08-14","end":"2018-10-02","age":36,"employed":true,"salary":37757,"budget":10134,"dislikes":["Manufacturing"]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:15.379130117Z","start":"2013-06-12","end":"2013-10-06","age":37,"employed":true,"salary":40150,"budget":2373,"dislikes":["Life Sciences","Energy and Transportation"]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:15.517985816Z","start":"2011-11-09","end":"2013-09-02","age":49,"employed":true,"salary":105463,"budget":8973,"dislikes":["Energy and Transportation","Crypto Assets"]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:15.661408018Z","start":"2021-05-15","end":"2022-07-11","age":66,"employed":true,"salary":26873,"budget":2524,"dislikes":["Technology","Finance or Crypto Assets"]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:15.804904187Z","start":"2013-11-05","end":"2015-10-01","age":40,"employed":true,"salary":154231,"budget":55976,"dislikes":["International Corp Fin","Trade and Services","Structured Finance"]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:15.948871233Z","start":"2012-02-24","end":"2015-01-13","age":69,"employed":true,"salary":21931,"budget":8783,"dislikes":["Trade and Services","Life Sciences","Finance","Technology"]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:16.094615464Z","start":"2009-03-02","end":"2011-03-01","age":76,"employed":true,"salary":172042,"budget":81856,"dislikes":["Technology","Industrial Applications and Services","Crypto Assets"]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:16.239170496Z","start":"2018-07-03","end":"2019-01-21","age":30,"employed":true,"salary":21813,"budget":3148,"dislikes":["Real Estate and Construction"]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:16.384838814Z","start":"2017-09-25","end":"2019-05-12","age":67,"employed":true,"salary":155422,"budget":19201,"dislikes":[]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:16.530424553Z","start":"2021-06-11","end":"2023-11-24","age":38,"employed":true,"salary":94465,"budget":38697,"dislikes":["Crypto Assets"]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:16.674019489Z","start":"2017-02-13","end":"2019-07-16","age":35,"employed":true,"salary":73395,"budget":18615,"dislikes":["Finance"]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:16.818359635Z","start":"2009-02-08","end":"2010-08-29","age":34,"employed":true,"salary":71412,"budget":4387,"dislikes":["Energy and Transportation","Trade and Services","Technology"]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:16.961964693Z","start":"2021-08-23","end":"2023-12-07","age":65,"employed":true,"salary":157364,"budget":44915,"dislikes":[]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:17.104848299Z","start":"2010-08-03","end":"2011-02-24","age":23,"employed":true,"salary":162493,"budget":35988,"dislikes":[]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:17.244790249Z","start":"2021-12-19","end":"2023-04-28","age":60,"employed":false,"salary":0,"budget":133112,"dislikes":[]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:17.38705021Z","start":"2009-08-14","end":"2011-02-26","age":59,"employed":true,"salary":30360,"budget":12461,"dislikes":[]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:17.532289797Z","start":"2016-07-28","end":"2017-02-11","age":45,"employed":false,"salary":0,"budget":46513,"dislikes":["Technology"]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:17.676129762Z","start":"2012-02-04","end":"2013-02-02","age":61,"employed":true,"salary":81835,"budget":22683,"dislikes":["Structured Finance"]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:17.823158145Z","start":"2020-10-07","end":"2023-07-20","age":57,"employed":true,"salary":28280,"budget":13604,"dislikes":["Industrial Applications and Services","Life Sciences"]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:17.971653016Z","start":"2019-05-10","end":"2019-05-12","age":42,"employed":true,"salary":97416,"budget":7279,"dislikes":["Structured Finance","Finance"]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:18.115068096Z","start":"2023-04-01","end":"2023-10-07","age":62,"employed":true,"salary":135210,"budget":28798,"dislikes":[]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:18.257204983Z","start":"2008-05-29","end":"2011-03-07","age":22,"employed":true,"salary":20176,"budget":4629,"dislikes":[]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:18.40436714Z","start":"2013-05-03","end":"2015-06-26","age":60,"employed":true,"salary":65233,"budget":11965,"dislikes":["International Corp Fin","Real Estate and Construction"]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:47:18.553922005Z","start":"2009-05-28","end":"2012-01-13","age":52,"employed":true,"salary":145481,"budget":25106,"dislikes":[]}
+Evaluation response: Not sent
+{"timestamp":"2025-04-06T02:48:33.950025442Z","start":"2022-08-13","end":"2024-12-01","age":34,"employed":true,"salary":42788,"budget":2460,"dislikes":["Technology"]}
+{"timestamp":"2025-04-06T02:48:42.127759305Z","start":"2016-05-20","end":"2019-01-01","age":76,"employed":true,"salary":111023,"budget":12615,"dislikes":["Trade and Services","Industrial Applications and Services","Finance","Technology"]}

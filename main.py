@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-from algo import compute, extract_preferences
+from algo import compute, calculate_risk
 
 URL = "mts-prism.com"
 PORT = 8082
@@ -105,14 +105,22 @@ while True:
     print(compute(eval(context)["message"]))
 
     # Maybe do something with the context to generate this?
-    with open("log.txt", "a") as f:
+    with open("log2.txt", "a") as f:
         f.write(eval(context)["message"] + "\n")
         # f.write("PARSED: " + str(extract_preferences(eval(context)["message"])) + "\n")
-        portfolio = compute(eval(context)["message"])
-        print("PORTF:", portfolio)
+        try:
+            portfolio = compute(eval(context)["message"])
+        except Exception:
+            continue
+        ctx = json.loads(eval(context)["message"])
+        try:
+            f.write("BUDG/SAL:" + str(ctx["budget"]/ctx["salary"]) + "\n")
+        except ZeroDivisionError:
+            pass
+        f.write("PORTF:" + str(portfolio) + "\n")
         success, response = send_portfolio(portfolio)
         if not success:
             f.write(f"Error: {response}\n")
             f.write(f"Evaluation response: {response}\n")
-            break
+            # break
         f.write(f"Evaluation response: {response}\n")

@@ -10,7 +10,7 @@ import pandas as pd
 import datetime
 
 BUDGET_RATIO = 0.5
-RISK_RATIO = 0.3 # remove RISK_RATIO propotion for filtering the risk
+RISK_RATIO = 0.4 # remove RISK_RATIO propotion for filtering the risk
 
 sectors = ["finance", "technology", "life science", "real estate", "transportation", "energy", "manufacturing"]
 tickers = ["JPM", "BAC", "WFC", "PGR", "GS", "AAPL", "MSFT", "NVDA", "GOOG", "AMZN", "ISRG", "AMGN", "GILD", "VRTX", "REGN", "ALNY", "AMT", "PLD", "PSA", "DLR", "UPS", "UNP", "CSX", "LUV", "PAA", "MMM", "CAT", "DE", "AMAT", "GE", "HON"]
@@ -51,7 +51,7 @@ def analysis1(start_date, end_date, avoid):
             for ticker in temp_tickers:
                 start_year = int(start_date.split("-")[0])
                 end_year = int(end_date.split("-")[0])
-                if data[ticker][end_year] - data[ticker][start_year]:
+                if data[ticker][end_year]/data[ticker][start_year] > 1.1:
                     invest[ticker] = float(data[ticker][start_year])
             # start_date1 = datetime.datetime.strptime(start_date, "%Y-%m-%d")+datetime.timedelta(days=3)
             # end_date1 = datetime.datetime.strptime(end_date, "%Y-%m-%d")+datetime.timedelta(days=3)
@@ -82,13 +82,16 @@ def pack_portfolio(stock_prices: dict, budget: int):
     # print(sorted_stocks)
     n = len(sorted_stocks)
     i = 0
-    while remaining_budget > sorted_stocks[-1][1]: 
-        if sorted_stocks[i][1] <= remaining_budget:
-            portfoio[sorted_stocks[i][0]] = portfoio.get(sorted_stocks[i][0], 0) + 1
-            remaining_budget -= sorted_stocks[i][1]
-        i = (i + 1)%n
-    # print(remaining_budget)
-    return portfoio
+    try:
+        while remaining_budget > sorted_stocks[-1][1]: 
+            if sorted_stocks[i][1] <= remaining_budget:
+                portfoio[sorted_stocks[i][0]] = portfoio.get(sorted_stocks[i][0], 0) + 1
+                remaining_budget -= sorted_stocks[i][1]
+            i = (i + 1)%n
+        # print(remaining_budget)
+        return portfoio
+    except IndexError:
+        return False
 
 def extract_preferences(message: str):
     context_dict = {"start_date": None, "end_date": None, "age": -1, "total_budget": None, "avoided_sectors": [], 
@@ -158,16 +161,19 @@ def extract_preferences(message: str):
         return False
     
 def read_pref(context):
-    json.loads(context)
+    return json.loads(context)
 # print(extract_preferences("Andre Webb is 19 years old, he started investing in 2012-04-11, and his investment end date was 2013-10-08. He enjoys hiking, and he avoids structured finance, life sciences, and finance. He has a true salary of $204,950 per year, and a budget of $10570."))
 
 def compute(message: str):
     pref = read_pref(message)
     if (pref):
-        to_avoid = [map_categories[x] for x in pref["dislikes"]]
+        to_avoid = [map_categories.get(x, None) for x in pref["dislikes"]]
         prices = analysis1(start_date=pref["start"], end_date=pref["end"], avoid=to_avoid)
-        portfolio_dict = pack_portfolio(filter_by_risk(prices, pref["start"], pref["end"], calculate_risk(pref["age"])), pref["budget"])
-        return list(portfolio_dict.items())
+        portfolio_dict = pack_portfolio(filter_by_risk(prices, pref["start"], pref["end"], calculate_risk(pref["age"], pref["employed"])), pref["budget"])
+        if portfolio_dict != None:
+            return list(portfolio_dict.items())
+        else:
+            return None
     else:
         return None
     
@@ -196,8 +202,10 @@ def filter_by_risk(prices, start_date, end_date, risk_level):
         filtered_risks = dict(risks[first_index:])
         return {p: prices[p] for p in prices if p in filtered_risks} 
 
-def calculate_risk(age):
-    if age == -1:
+def calculate_risk(age, employed):
+    if not employed:
+        return "low"
+    elif age == -1:
         return "medium"
     elif age < 30:
         return "high"

@@ -10,6 +10,7 @@ import datetime
 
 
 sectors = ["finance", "technology", "life science", "real estate", "transportation", "energy", "manufacturing"]
+tickers = ["JPM", "BAC", "WFC", "PGR", "GS", "AAPL", "MSFT", "NVDA", "GOOG", "AMZN", "ISRG", "AMGN", "GILD", "VRTX", "REGN", "ALNY", "AMT", "PLD", "PSA", "DLR", "UPS", "UNP", "CSX", "LUV", "PAA", "MMM", "CAT", "DE", "AMAT", "GE", "HON"]
 
 
 symbols = {

@@ -89,7 +89,7 @@ def send_portfolio(weighted_stocks):
         ]
         return send_post_request("/submit", data=data)
     else:
-        return (False, "Not sent")
+        return (True, "Not sent")
 
 
 success, information = get_my_current_information()
@@ -107,10 +107,12 @@ while True:
     # Maybe do something with the context to generate this?
     with open("log.txt", "a") as f:
         f.write(eval(context)["message"] + "\n")
-        f.write("PARSED: " + extract_preferences(eval(context)["message"]))
+        f.write("PARSED: " + str(extract_preferences(eval(context)["message"])) + "\n")
         portfolio = compute(eval(context)["message"])
 
         success, response = send_portfolio(portfolio)
         if not success:
             f.write(f"Error: {response}\n")
+            f.write(f"Evaluation response: {response}\n")
+            break
         f.write(f"Evaluation response: {response}\n")

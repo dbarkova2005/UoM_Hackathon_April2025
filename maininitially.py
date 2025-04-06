@@ -12,6 +12,7 @@ import threading
 import requests
 import brotli
 import zlib
+import time
 
 # EXPOSED PROXY ADDRESSSSSSẞSSSSSSSSSSSSSSSSSS'SSSSSSSSSSSSSSXSSSSFSFAADSFADSFADSFADSFADSDFASDFADSDFADSFADSFAS
 
@@ -334,10 +335,6 @@ def scrape():
 
 # def newscrape():
 #     url = 'https://scrapemequickly.com/all_cars?scraping_run_id=89d5dca4-0a34-11f0-b686-4a33b21d14f6'
-
-import requests
-import pandas as pd
-import time
 
 BASE_URL = "https://api.scrapemequickly.com/cars/test"
 HEADERS = {

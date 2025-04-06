@@ -1,7 +1,7 @@
 # figure out how to get back admin key via get token
 # send the request you get when scrolling to get the test response in json format
 # extract da data
-
+team_id = "c335f715-12af-11f0-9285-0242ac120003"
 from collections import defaultdict
 import requests
 import brotli
@@ -65,8 +65,6 @@ def process_car_data(cars):
             make_counts[car['make']] += 1
 
     total_cars = len(cars) * 25
-    if x == 1000:
-        total_cars = sum(len(batch) for batch in cars)
     avg_price = total_price / total_cars
     mode_make = max(make_counts, key=make_counts.get)
 
@@ -83,60 +81,65 @@ def get_random_proxy(batch_index):
         time.sleep(0.)
     return {'http': proxies[batch_index % len(proxies)], 'https': proxies[batch_index % len(proxies)]}
 
-url = "https://api.scrapemequickly.com/get-token"
-params = {
-    "scraping_run_id": "89d5dca4-0a34-11f0-b686-4a33b21d14f6"
-}
-headers = {
-    "Accept": "*/*",
-    "Sec-Fetch-Site": "same-site",
-    "Origin": "https://scrapemequickly.com",
-    "Sec-Fetch-Dest": "empty",
-    "Accept-Language": "en-GB,en;q=0.9",
-    "Sec-Fetch-Mode": "cors",
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3 Safari/605.1.15",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Referer": "https://scrapemequickly.com/",
-    "Priority": "u=3, i"
-}
 
-response = requests.get(url, headers=headers, params=params)
 
-tokendata = response.json()
-token = tokendata['token']
 
-# URL for the actual GET request
-url = "https://api.scrapemequickly.com/cars/test"
 
 # Headers including the Authorization token
-headers = {
-    "Authorization": f"Bearer {token}",
-    "Accept": "*/*",
-    "Sec-Fetch-Mode": "cors",
-    "Sec-Fetch-Site": "same-site",
-    "Sec-Fetch-Dest": "empty",
-    "Origin": "https://scrapemequickly.com",
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
-    "Referer": "https://scrapemequickly.com/",
-    "Priority": "u=1, i"
-}
-data = []
-def main():
-    for x in range(0,1001):
+
+
+def main(scraping_run_idd):
+    data = []
+    url = "https://api.scrapemequickly.com/get-token"
+    params = {
+        "scraping_run_id": f"{scraping_run_idd}"
+    }
+    headerstoken = {
+        "Accept": "*/*",
+        "Sec-Fetch-Site": "same-site",
+        "Origin": "https://scrapemequickly.com",
+        "Sec-Fetch-Dest": "empty",
+        "Accept-Language": "en-GB,en;q=0.9",
+        "Sec-Fetch-Mode": "cors",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3 Safari/605.1.15",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Referer": "https://scrapemequickly.com/",
+        "Priority": "u=3, i"
+    }
+
+    response = requests.get(url, headers=headerstoken, params=params)
+
+    tokendata = response.json()
+    token = tokendata['token']
+    print("token is: "+ token)
+    for x in range(0,1000):
+        url = "https://api.scrapemequickly.com/cars/test"
         params = {
-            "scraping_run_id": "89d5dca4-0a34-11f0-b686-4a33b21d14f6",
+            "scraping_run_id": f"{scraping_run_idd}",
             "per_page": 25,
             "start": 25*x
         }
 
+        headers = {
+        "Authorization": f"Bearer {token}",
+        "Accept": "*/*",
+        "Sec-Fetch-Mode": "cors",
+        "Sec-Fetch-Site": "same-site",
+        "Sec-Fetch-Dest": "empty",
+        "Origin": "https://scrapemequickly.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+        "Referer": "https://scrapemequickly.com/",
+        "Priority": "u=1, i"}
         # Send GET request
         if random.randint(0,6) == 6:
             response = requests.get(url, headers=headers, params=params)
         else:
             response = requests.get(url, headers=headers, params=params, proxies=get_random_proxy(x))
         if x == 0:
+            print(response.text)
+        if x == 1000:
             print(response.text)
 
         # Check the response
@@ -152,9 +155,6 @@ def main():
             response = requests.get(url, headers=headers, params=params)
             data.append(response.json()['data'])
             #print("Data:\n", data)
-            print(f"Fetched page {x}")
-
-
 
     max_year, min_year, avg_price, mode_make = process_car_data(data)
     print(max_year,min_year,avg_price,mode_make)
@@ -169,7 +169,7 @@ def main():
 
 
 def start_scraping_run() -> str:
-    r = requests.post(f"https://api.scrapemequickly.com/scraping-run?team_id={"dff0f82d-1241-11f0-8d9a-0242ac120003"}")
+    r = requests.post(f"https://api.scrapemequickly.com/scraping-run?team_id={"c335f715-12af-11f0-9285-0242ac120003"}")
     
     if r.status_code != 200:
         print(r.json())
@@ -202,6 +202,8 @@ def submit(answers: dict, scraping_run_id: str) -> bool:
 
 
 scrapingRunID = start_scraping_run()
-dictin = main()
+
+print(scrapingRunID)
+dictin = main(scrapingRunID)
 print(dictin)
 submit(dictin,scrapingRunID)

@@ -1,6 +1,8 @@
 # figure out how to get back admin key via get token
 # send the request you get when scrolling to get the test response in json format
 # extract da data
+# this code was made with ai asking it to make my code better, it didnt cook and i scrapped it, i leave it 
+# in here for fun ig
 
 from collections import defaultdict
 import requests
@@ -10,7 +12,7 @@ import random
 import aiohttp
 import asyncio
 import sys
-# Step 1: Get the token
+# Get the token
 
 def process_car_data(cars):
     # Initialize variables for max, min, total price, and mode make count

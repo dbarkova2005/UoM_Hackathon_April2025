@@ -1,10 +1,12 @@
-import json
-import requests
 import os
+import json
+import logging
+import requests
 from dotenv import load_dotenv
-load_dotenv()
-
 from algo import compute, calculate_risk
+load_dotenv()
+logger = logging.getLogger(__name__)
+logging.basicConfig(filename='log3.txt', encoding='utf-8', level=logging.DEBUG)
 
 URL = "mts-prism.com"
 PORT = 8082
@@ -94,24 +96,30 @@ def send_portfolio(weighted_stocks):
 
 success, information = get_my_current_information()
 if not success:
-    print(f"Error: {information}")
-print(f"Team information: ", information)
+    logging.error(f"Error: {information}")
+logging.info(f"Team information: ", information)
 
 while True:
     success, context = get_context()
     if not success:
-        print(f"Error: {context}")
-    print(f"Context provided: ", context)
-    print(compute(eval(context)["message"]))
+        logging.error(f"Error: {context}")
+    logging.info(f"Context provided: ", context)
+    logging.debug(compute(eval(context)["message"]))
 
     # Maybe do something with the context to generate this?
-    with open("log2.txt", "a") as f:
+    with open("log3.txt", "a") as f:
         f.write(eval(context)["message"] + "\n")
         # f.write("PARSED: " + str(extract_preferences(eval(context)["message"])) + "\n")
         try:
             portfolio = compute(eval(context)["message"])
         except Exception:
             continue
+        success, response = send_portfolio(portfolio)
+        if not success:
+            f.write(f"Error: {response}\n")
+            f.write(f"Evaluation response: {response}\n")
+            continue
+        f.write(f"Evaluation response: {response}\n")
         ctx = json.loads(eval(context)["message"])
         try:
             f.write("BUDG/SAL:" + str(ctx["budget"]/ctx["salary"]) + "\n")
@@ -119,12 +127,5 @@ while True:
 
         except ZeroDivisionError:
             f.write("RISK:" + str(calculate_risk(ctx["age"], ctx["employed"], 0)) + "\n")
-            pass
-        
+            pass      
         f.write("PORTF:" + str(portfolio) + "\n")
-        success, response = send_portfolio(portfolio)
-        if not success:
-            f.write(f"Error: {response}\n")
-            f.write(f"Evaluation response: {response}\n")
-            break
-        f.write(f"Evaluation response: {response}\n")

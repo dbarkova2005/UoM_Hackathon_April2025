@@ -104,7 +104,7 @@ print(f"Context provided: ", context)
 print(compute(eval(context)["message"]))
 
 # Maybe do something with the context to generate this?
-with open("log2.txt", "a") as f:
+with open("log3.txt", "a") as f:
     f.write(eval(context)["message"] + "\n")
     # f.write("PARSED: " + str(extract_preferences(eval(context)["message"])) + "\n")
     try:

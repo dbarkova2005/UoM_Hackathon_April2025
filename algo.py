@@ -234,12 +234,12 @@ def compute(message: str):
 
 
 # 
-with open("examples.txt", "r") as f:
-    with open("output.txt", "a") as g:
-        ctxs = f.readlines()
-        for ctx in ctxs:
-            msg = eval(ctx)["message"]
-            pref = extract_preferences(msg)
-            print(pref)
-            # prices = analysis1(start_date=pref["start"], end_date=pref["end"], avoid=pref["dislikes"])
-            # g.write(str(pack_portfolio(prices, pref["budget"])) + "\n")
+# with open("examples.txt", "r") as f:
+#     with open("output.txt", "a") as g:
+#         ctxs = f.readlines()
+#         for ctx in ctxs:
+#             msg = eval(ctx)["message"]
+#             pref = extract_preferences(msg)
+#             print(pref)
+#             # prices = analysis1(start_date=pref["start"], end_date=pref["end"], avoid=pref["dislikes"])
+#             # g.write(str(pack_portfolio(prices, pref["budget"])) + "\n")

@@ -12,7 +12,7 @@ import datetime
 BUDGET_RATIO = 0.5
 RISK_RATIO = 0.4 # remove RISK_RATIO propotion for filtering the risk
 
-sectors = ["finance", "technology", "life science", "real estate", "transportation", "energy", "manufacturing"]
+sectors = ["finance", "technology", "life science", "real estate", "energy", "manufacturing"]
 tickers = ["JPM", "BAC", "WFC", "PGR", "GS", "AAPL", "MSFT", "NVDA", "GOOG", "AMZN", "ISRG", "AMGN", "GILD", "VRTX", "REGN", "ALNY", "AMT", "PLD", "PSA", "DLR", "UPS", "UNP", "CSX", "LUV", "PAA", "MMM", "CAT", "DE", "AMAT", "GE", "HON"]
 
 map_categories = {"Structured Finance": "finance",
@@ -21,8 +21,7 @@ map_categories = {"Structured Finance": "finance",
                   "Technology": "technology",
                   "Life Sciences": "life sciences",
                   "Real Estate and Construction": "real estate",
-                  "Transportation": "transportation",
-                  "Energy": "energy",
+                  "Energy and Transportation": "energy",
                   "Manufacturing": "manufacturing"}
 
 symbols = {
@@ -30,9 +29,8 @@ symbols = {
     "technology": ["AAPL", "MSFT", "NVDA", "GOOG", "AMZN"],
     "life science":["ISRG", "AMGN", "GILD", "VRTX", "REGN", "ALNY"],
     "real estate": ["AMT", "PLD", "PSA", "DLR"],
-    "transportation": ["UPS", "UNP", "CSX", "LUV"],
-    "energy": ["PAA"],
-    "manufacturing": ["MMM", "CAT", "DE", "AMAT", "GE", "HON"]
+    "energy": ["PAA", "UPS", "UNP", "CSX", "LUV"],
+    "manufacturing": ["MMM", "CAT", "DE", "AMAT", "GE", "HON"],
 }
 
 MONTHS = ["January", "February", "March", "April", "May", "June", "July",
@@ -51,7 +49,7 @@ def analysis1(start_date, end_date, avoid):
             for ticker in temp_tickers:
                 start_year = int(start_date.split("-")[0])
                 end_year = int(end_date.split("-")[0])
-                if data[ticker][end_year]/data[ticker][start_year] > 1.1:
+                if data[ticker][end_year]/data[ticker][start_year] > 1.15:
                     invest[ticker] = float(data[ticker][start_year])
             # start_date1 = datetime.datetime.strptime(start_date, "%Y-%m-%d")+datetime.timedelta(days=3)
             # end_date1 = datetime.datetime.strptime(end_date, "%Y-%m-%d")+datetime.timedelta(days=3)
@@ -173,7 +171,7 @@ def compute(message: str):
             portfolio_dict = pack_portfolio(filter_by_risk(prices, pref["start"], pref["end"], calculate_risk(pref["age"], pref["employed"], pref["budget"]/pref["salary"])), pref["budget"])
         else:
             portfolio_dict = pack_portfolio(filter_by_risk(prices, pref["start"], pref["end"], calculate_risk(pref["age"], pref["employed"], 0)), pref["budget"])
-        if portfolio_dict != None:
+        if portfolio_dict != False:
             return list(portfolio_dict.items())
         else:
             return None

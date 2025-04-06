@@ -115,8 +115,12 @@ while True:
         ctx = json.loads(eval(context)["message"])
         try:
             f.write("BUDG/SAL:" + str(ctx["budget"]/ctx["salary"]) + "\n")
+            f.write("RISK:" + str(calculate_risk(ctx["age"], ctx["employed"], ctx["budget"]/ctx["salary"])) + "\n")
+
         except ZeroDivisionError:
+            f.write("RISK:" + str(calculate_risk(ctx["age"], ctx["employed"], 0)) + "\n")
             pass
+        
         f.write("PORTF:" + str(portfolio) + "\n")
         success, response = send_portfolio(portfolio)
         if not success:

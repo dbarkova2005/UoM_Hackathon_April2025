@@ -17,3 +17,305 @@ Robin Christenson is a 68-year-old investor who started investing on January 23r
 Evaluation response: {"passed": true, "profit": 13540.199400000001, "points": -10.757329345969266, "error": ""}
 
 Monica King is a 56-year-old female investor who started investing in 2012-02-10 and ended in 2014-11-27. She enjoys painting and avoids manufacturing, crypto assets, finance, trade and services. She has a true salary of $166913, and a budget of $76846.
+Elizabeth Wilson is 34 years old and has a budget of $954. She started investing on September 27th, 2014 and ended on July 22nd, 2016. She enjoys painting and is employed at True Salary of 143068 per year.
+Kevin Mendoza is 54 years old, he started investing on September 7th, 2012, and his investment ended on August 18th, 2015. He enjoys woodworking, and he avoids life sciences, finance or crypto assets, industrial applications and services. He has a total budget of $13101.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Marvin Sims is 21 years old and has a total budget of $30042. His investment start date is 2015-01-30 and his investment end date is 2017-10-05. He enjoys knitting and avoids structured finance, technology, trade and services.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Joyce Simmons is 30 years old and has a budget of $10860. She started investing on July 28th, 2014 and ended on December 14th, 2014. Her hobbies are painting and she is employed by True. She has a salary of $119,457 per year.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Kenneth Shaffer is 26 years old and his investment start date is 2018-12-07 and their investment end date is 2019-02-17. His hobbies are rock climbing and he is employed at True Salary which is $48536 a year. His budget is $19 total.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Kevin Lawrence is a 44-year-old investor. His investment start date was on July 10th, 2011 and his investment end date was on June 5th, 2014. His hobbies are learning languages and he avoids life sciences and technology. He has a total budget of $1658.
+PARSED: {'start_date': '2011-07-10', 'end_date': '2014-06-05', 'age': 44, 'total_budget': 1658, 'avoided_sectors': ['technology', 'life science']}The name of the person with a budget of $1303 is Priscila Coleman PhD. Their investment start date is 2020-04-20 and their investment end date is 2020-07-21. Their hobbies are learning languages and they are employed at True Salary which is $74527 a year.
+PARSED: {'start_date': '2020-04-20', 'end_date': '2020-07-21', 'age': -1, 'total_budget': 1, 'avoided_sectors': []}Error: Not sent
+Evaluation response: Not sent
+Andrea Christenson is a 64 year old female investor who started investing on April 6th, 2007 and ended on September 24th, 2007. Her hobbies are gardening and she avoids Industrial Applications and Services and Life Sciences. She has a true salary of $152,76 per year.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Jillian Bailey is 51 years old and has a budget of $31884. Her investment started on March 7th, 2014 and ended on September 14th, 2016. Her hobbies are knitting and she is employed by True. Her salary is $183700 a year and her budget is $31884 total.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+William Schultz is a 60-year-old investor who started investing on December 27th, 2012 and ended on February 3rd, 2015. His hobbies are bird watching and he avoids Energy and Transportation, International Corp Fin. He has a budget of $3826 total.
+PARSED: {'start_date': '2012-12-27', 'end_date': '2015-02-03', 'age': 60, 'total_budget': 3, 'avoided_sectors': ['transportation', 'energy']}Evaluation response: {"passed": true, "profit": 1.3916, "points": 38.76237367937074, "error": ""}
+
+Amber Ford is 71 years old and has a budget of $13044. Her investment start date is 2014-06-01 and their investment end date is 2016-10-20. She enjoys rock climbing and avoids manufacturing, industrial applications and services, trade and services, finance or crypto assets.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Robert Allen is 47 years old and has a budget of $18226. His investment start date is 2022-05-25 and his investment end date is 2024-04-03. He avoids Real Estate and Construction and Energy and Transportation.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Joseph Hunter is a 54-year-old investor who started investing on March 29th, 2012 and ended on January 27th, 2013. His hobbies include gardening and he avoids manufacturing, life sciences, crypto assets, and technology. He has a true salary of $15,4974 per year.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Lucas Yang is 77 years old, has a budget of $10962 and an investment start date of 2018-12-19. He has a hobby of rock climbing and avoids Crypto Assets. His investment end date is 2020-07-02.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+David Davis is 56 years old and has a budget of $2203. His investment start date is 2022-10-20 and their investment end date is 2024-02-27. His hobbies are learning languages and he is employed at True Salary of $75560 per year.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Michelle Jones is 73 years old and has invested in real estate and construction. Her investment start date is 2020-01-10 and her investment end date is 2020-12-29. Her hobbies are bird watching and she avoids Real Estate and Construction. She has a budget of $368 total.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Andrew Henderson is a 63-year-old investor who started investing in 2014-03-20. His investment end date was 2016-07-04. His hobbies include learning languages, and he avoids life sciences. He has a True Salary of $123,689 per year. His budget is $10279.
+PARSED: {'start_date': '2014-03-20', 'end_date': '2016-07-04', 'age': 63, 'total_budget': 1, 'avoided_sectors': ['life science']}Evaluation response: {"passed": true, "profit": 0.7022000000000002, "points": 45.5147815122175, "error": ""}
+
+Pamela Martinez is 60 years old and has a budget of $15708 per year. Her investment start date was on December 23, 2021 and her investment end date was January 11, 2024. Her hobbies are photography and she is employed at True Salary.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Alexis Burton is 56 years old and has a budget of $3189. Her investment start date is 2021-12-02. Her investment end date is 2023-8-23. She avoids finance or crypto assets, crypto assets, real estate and construction.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Heather Li is a 40-year-old female investor who started investing on October 29th, 2017 and ended on March 18th, 2019. She enjoys rock climbing and does not like technology, finance or crypto assets. She has a budget of $15609 total.
+PARSED: {'start_date': '2017-10-29', 'end_date': '2019-03-18', 'age': 40, 'total_budget': 1, 'avoided_sectors': []}Error: Not sent
+Evaluation response: Not sent
+Andre Webb is 19 years old, he started investing in 2012-04-11, and his investment end date was 2013-10-08. He enjoys hiking, and he avoids structured finance, life sciences, and finance. He has a true salary of $204,950 per year, and a budget of $10570.
+PARSED: {'start_date': '2012-04-11', 'end_date': '2013-10-08', 'age': 19, 'total_budget': 1, 'avoided_sectors': ['finance', 'life science']}Evaluation response: {"passed": true, "profit": 0.05600000000000005, "points": 24.479131686106243, "error": ""}
+
+Andrew Garza MD is 28 years old and has a budget of $2225 per year. His investment start date is 2020-03-30 and his investment end date is 202205-19. He enjoys playing the guitar and avoids International Corp Fin, Energy and Transportation.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Erin Garza is 49 years old and has a budget of $37575. Her investment start date was on 2010-12-20 and their investment end date was 2010-12-28. Her hobbies are guitar and she is employed by True. She has a salary of $1,96999 per year.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Dr. Jeffrey Young is 44 years old and has a total investment of $6664. His investment start date is January 19th, 2023 and his investment end date is September 4, 2023. He plays the guitar and avoids Finance, Real Estate and Construction, International Corp Fin.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+The name of the person is Laura Hendrix and they are 78 years old. They started investing in crypto assets on July 18th, 2023, and their investment ended on December 16th, 2024. They avoid Crypto Assets, Real Estate and Construction, and Technology. They have a budget of $70753.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+William Keller is a 40-year-old investor who started investing on January 30th, 2017. His investment ended on November 16th, 2019. He enjoys hiking and avoids technology, energy and transportation, structured finance, and structured finance. He has a total budget of $19096.
+PARSED: {'start_date': '2017-01-30', 'end_date': '2019-11-16', 'age': 40, 'total_budget': 19096, 'avoided_sectors': ['finance', 'technology', 'transportation', 'energy']}Evaluation response: {"passed": true, "profit": 8763.639600000008, "points": -8.636124443771514, "error": ""}
+
+Valerie padilla is 44 years old and has a budget of $37782. Her investment start date is 2019-09-18 and their investment end date is 2020-08- 31. She enjoys woodworking and avoids Trade and Services, Energy and Transportation.
+PARSED: {'start_date': '2019-09-18', 'end_date': '2020-08-31', 'age': 44, 'total_budget': 37782, 'avoided_sectors': ['transportation', 'energy']}Evaluation response: {"passed": true, "profit": 12096.473300000001, "points": -4.582042974115021, "error": ""}
+
+Jose Hansen is a 26-year-old investor. His investment start date is October 15th, 2017 and his investment end date is April 27th, 2020. His hobbies are hiking and he avoids International Corp Fin, Finance, Crypto Assets, Real Estate and Construction. His total investment is $19751.
+PARSED: {'start_date': '2017-10-15', 'end_date': '2020-04-27', 'age': 26, 'total_budget': 19751, 'avoided_sectors': ['finance', 'real estate']}Evaluation response: {"passed": true, "profit": 5289.352200000003, "points": 26.786913557305503, "error": ""}
+
+Kyle Norton is 36 years old and has a budget of $53022. His investment start date is November 14th, 2018 and his investment end date is October 14th, 2019. He enjoys painting and avoids industrial applications and services, trade and services, manufacturing, life sciences, real estate and construction.
+PARSED: {'start_date': '2018-11-14', 'end_date': '2019-10-14', 'age': 36, 'total_budget': 53022, 'avoided_sectors': ['life science', 'real estate', 'manufacturing']}Evaluation response: {"passed": true, "profit": 4487.875000000007, "points": -2.7819354151731144, "error": ""}
+
+Cindy Wells is 54 years old and has a budget of $11915. Her investment start date is 2019-10-30 and their investment end date is 2021-04-30. She enjoys hiking and avoids Life Sciences, Structured Finance, Energy and Transportation.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Wayne West is 53 years old and has a budget of $1826 per year. His investment start date was on May 31st, 2018 and his investment end date was on October 15th, 2019. He enjoys bird watching and avoids Trade and Services.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Dorothy Brewer is 26 years old and has a budget of $1295. Her investment start date was April 2, 2007 and her investment end date was July 19, 2008. She enjoys hiking and avoids energy and transportation. She is employed with a True Salary of $83018 a year.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Nicole Brown is 71 years old and has a budget of $23643. Her investment start date was on March 4th 2010 and ended on September 11th 2010. Her hobbies are cooking and she avoids manufacturing. She is employed with a True Salary of $17563 per year and her budget is $23643 total.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Kenneth Price is 45 years old and has a budget of $17136. His investment start date is 2020-04-08 and his investment end date is 2020-08-07. He enjoys rock climbing and avoids Trade and Services. His True Salary is $105815 and his budget is 17136.
+PARSED: {'start_date': '2020-04-08', 'end_date': '2020-08-07', 'age': 45, 'total_budget': 17136, 'avoided_sectors': []}Evaluation response: {"passed": true, "profit": 2889.963100000001, "points": -6.204266811702215, "error": ""}
+
+Angel Kline is 65 years old and has a budget of $10124. Their investment start date is 2017-11-03 and their investment end date is 2020-09-16. Their hobbies are bird watching and they are employed by True. Their salary is $25725 a year and their budget is $10124.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Hannah Davis is 75 years old and has a total budget of $52158. Her investment start date was February 1, 2023 and ended on November 7, 2024. She enjoys woodworking and avoids life sciences, industrial applications and services.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Scott Greer is a 31-year-old investor who started investing on December 29th, 2023 and ended on January 17th, 2024. He has a budget of $25025 and a True Salary of $17422 per year.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Robert Chase is 58 years old and has a budget of $106202 per year. His investment start date is 2019-10-10 and his investment end date is 2019-12-24. He enjoys photography and avoids finance or crypto assets. He is employed at True Salary and has yearly income of $2233625.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Jennifer Barnes is 76 years old and has a budget of $4635. Her investment start date is 2016-10-30 and their investment end date is 2019-02-20. She enjoys rock climbing and avoids Energy and Transportation, Manufacturing.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Joseph West is 73 years old, has a budget of $41 per year, and invests in Crypto Assets, Industrial Applications and Services, and Technology. His investment start date is 2008-12-11, and his investment end date is 2011-03-17.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Karen Murphy is 21 years old and has a budget of $8038. Her investment start date is 2024-06-26, and her investment end date is 2024-1029. She enjoys rock climbing and avoids Real Estate and Construction.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+The name of the person with a start date of 2020-06-18 is Aaron Douglas. Their investment end date is 2022-12-01. Their hobbies are cooking and they are employed at True Salary of $4760 per year. Their budget is $746 total.
+PARSED: {'start_date': '2020-06-18', 'end_date': '2022-12-01', 'age': -1, 'total_budget': 746, 'avoided_sectors': []}Evaluation response: {"passed": true, "profit": 116.59360000000004, "points": 34.04056211436162, "error": ""}
+
+Alexander Booth DDS is 25 years old and has a budget of $54904 total. His investment start date is 2012-10-13 and his investment end date is 2014-09-01. He enjoys photography and avoids trade and services, real estate and construction, finance or crypto assets, international corp fin, energy and transportation.
+PARSED: {'start_date': '2012-10-13', 'end_date': '2014-09-01', 'age': 25, 'total_budget': 54904, 'avoided_sectors': ['finance', 'real estate', 'transportation', 'energy']}Evaluation response: {"passed": true, "profit": 30736.783799999983, "points": -3.69449986291346, "error": ""}
+
+Lauren Montgomery is 47 years old and started investing in 2010-01-27. Her investment end date was 2012-11-03 and she has a total budget of $798. She enjoys woodworking and avoids finance, finance or crypto assets.
+PARSED: {'start_date': '2010-01-27', 'end_date': '2012-11-03', 'age': 47, 'total_budget': 798, 'avoided_sectors': ['finance']}Error: Error - something went wrong when requesting [CODE: 418]: Error encountered while evaluation of input: [Error: budget breached (your portfolio value: 813.1187, budget: 798)]. This is most likely a you problem. 
+
+Evaluation response: Error - something went wrong when requesting [CODE: 418]: Error encountered while evaluation of input: [Error: budget breached (your portfolio value: 813.1187, budget: 798)]. This is most likely a you problem. 
+
+Lisa Hill is 75 years old and has a total budget of $5433. She started investing on May 4, 2023 and ended it on December 14, 2024. She avoids Industrial Applications and Services and is employed at True Salary of $129290 per annum.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Jonathan Harris is 61 years old and has a budget of $34534. His investment start date is 2012-02-10 and his investment end date is 2015-02-15. He enjoys knitting and avoids structured finance, trade and services, and manufacturing.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Emily Johnson is a 28-year-old investor who started investing on October 31st, 2014 and ended on May 20th, 2017. Her hobbies are guitar and she avoids Real Estate and Construction and Crypto Assets. She is employed at True Salary of $88412 a year and has a budget of $15370.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Emily Henry is 41 years old and has a budget of $12701 per year. Her investment start date is 2018-03-18 and their investment end date is 2018-8-01. Her hobbies are gardening and she avoids Trade and Services. She is employed at True Salary and her budget is $12701 total.
+PARSED: {'start_date': '2018-03-18', 'end_date': '2018-08-01', 'age': 41, 'total_budget': 12701, 'avoided_sectors': []}Evaluation response: {"passed": true, "profit": 901.855999999998, "points": -4.365437070719931, "error": ""}
+
+John Roman is 61 years old and has a total budget of $3127. His investment start date is 2023-06-0 and their investment end date is 2023-0612. He enjoys woodworking and does not work in manufacturing. He is employed with a True Salary of $42420 a year.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Brian Price is 52 years old and has a budget of $13398. His investment start date was on 2014-05-02. His investment end date was on 2016-08-01. He enjoys rock climbing and his employer is True Salary.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Jessica Jones is 77 years old and has a budget of $14797. She started investing in 2012-02-10 and ended it on 2013-12-07. She avoids finance, industrial applications and services, technology, life sciences, and the guitar.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+James Hensley, PhD, is 61 years old and has a total budget of $5185. His investment start date was January 31, 2007 and his investment end date was January 5, 2008. He enjoys cooking and avoids life sciences, manufacturing, trade and services.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Colin Cooper is 49 years old and has invested $342 total in Industrial Applications and Services. His investment start date was on the 5th of November, 2021 and ended on the 12th of December, 2022. He enjoys painting and avoids industrial applications and services.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Steven Barker is 67 years old and has a budget of $5321 per year. His investment start date was September 24th, 2018 and ended on July 30th, 2019. His hobbies are guitar and he is employed by True.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Brittany Davis is 57 years old, has a total investment of $11659, and hobbies include knitting. She started investing on December 31st, 2023, and ended on March 1st, 2020. Her investment end date was on March 1th, 2024.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Christopher Hughes is 20 years old and has invested in real estate and construction. He has a budget of $6941 per year. His investment start date is 2024-02-08 and their investment end date is 2025-01-07. He enjoys gardening and avoids Real Estate and Construction.
+PARSED: {'start_date': '2024-02-08', 'end_date': '2025-01-07', 'age': 20, 'total_budget': 6347, 'avoided_sectors': ['real estate']}Evaluation response: {"passed": true, "profit": 1091.6889, "points": 39.65943595915715, "error": ""}
+
+Jo Thompson is 48 years old and has a budget of $48379. Her investment start date is 2019-10-09 and their investment end date is 2021-11- 28. She enjoys gardening and avoids finance and life sciences. She is employed at True Salary of $96572 a year.
+PARSED: {'start_date': '2019-09-10', 'end_date': '2021-09-11', 'age': 48, 'total_budget': 48379, 'avoided_sectors': ['finance', 'life science']}Evaluation response: {"passed": true, "profit": 25338.435099999995, "points": 45.092983707195806, "error": ""}
+
+Sabina Warren is 19 years old, she started investing in 2008-07-11 and her investment end date was 2008-10-10. She enjoys bird watching and avoids manufacturing, finance or crypto assets, finance, structured finance. She has a budget of $10965 total.
+PARSED: {'start_date': '2008-07-11', 'end_date': '2008-10-10', 'age': 19, 'total_budget': 10965, 'avoided_sectors': ['finance', 'manufacturing']}Evaluation response: {"passed": true, "profit": 1048.54, "points": 39.69456001492871, "error": ""}
+
+Melanie Haney is a 63-year-old female investor who started investing on April 28, 2019. Her investment ended on October 7, 2021. She has a total budget of $24501 and a total investment start date of April 28, 2019.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Vanessa Adkins is 71 years old and has a total budget of $15873. Her investment start date is 2020-04-09 and their investment end date is 2021-11-24. She enjoys hiking and avoids Structured Finance.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Ernest Davis is a 49-year-old investor who started investing on July 3rd, 2012 and ended on September 6th, 2012. He enjoys gardening and avoids finance, life sciences, real estate and construction. His true salary is $6252 per year and his budget is $4530.
+PARSED: {'start_date': '2012-07-03', 'end_date': '2012-09-06', 'age': 49, 'total_budget': 4530, 'avoided_sectors': ['finance', 'life science', 'real estate']}Error: Error - something went wrong when requesting [CODE: 418]: Error encountered while evaluation of input: [Error: budget breached (your portfolio value: 5199.8108999999995, budget: 4530)]. This is most likely a you problem. 
+
+Evaluation response: Error - something went wrong when requesting [CODE: 418]: Error encountered while evaluation of input: [Error: budget breached (your portfolio value: 5199.8108999999995, budget: 4530)]. This is most likely a you problem. 
+
+Kerry Lee is 55 years old and has a budget of $61562. He started investing on July 9th, 2017 and ended on July 21st, 2017. His hobbies are woodworking and he avoids International Corp Fin, Manufacturing.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Sergio Rodrguez is 72 years old and has a budget of $871. His investment start date is 2021-04-22 and his investment end date is 2022-0711. He enjoys guitar and avoids Life Sciences, Crypto Assets, and Manufacturing.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Douglas Hopkins is a 39-year-old investor. He started investing on October 20th, 2024 and ended on October 23rd, 2024. He has a budget of $6218 per year. He avoids Structured Finance, Technology, and Manufacturing.
+PARSED: {'start_date': '2024-10-20', 'end_date': '2024-10-23', 'age': 39, 'total_budget': 51, 'avoided_sectors': ['finance', 'technology', 'manufacturing']}Evaluation response: {"passed": true, "profit": 0.28999999999999915, "points": 235.25400478417254, "error": ""}
+
+Mr Ricky Schwartz is 75 years old and has a budget of $56643. His investment start date is 2010-12-10 and their investment end date is 2011-05-02. He enjoys bird watching and avoids Crypto Assets, International Corp Fin, Real Estate and Construction.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Kara Garrison is a 26-year-old investor who started investing on September 23rd, 2008 and ended on August 31st, 2011. She has a budget of $8376 and a true salary of $51233. She avoids Energy and Transportation, Finance, Manufacturing, and Life Sciences.
+PARSED: {'start_date': '2008-09-23', 'end_date': '2011-08-31', 'age': 26, 'total_budget': 8376, 'avoided_sectors': ['finance', 'life science', 'transportation', 'energy', 'manufacturing']}Error: Error - something went wrong when requesting [CODE: 418]: Error encountered while evaluation of input: [Error: budget breached (your portfolio value: 9730.3819, budget: 8376)]. This is most likely a you problem. 
+
+Evaluation response: Error - something went wrong when requesting [CODE: 418]: Error encountered while evaluation of input: [Error: budget breached (your portfolio value: 9730.3819, budget: 8376)]. This is most likely a you problem. 
+
+Laura Livingston is 54 years old and has a budget of $51707. She started investing in 2015-06-13 and ended it on 2015-09-21. Her hobbies are bird watching and she is employed at True Salary of $197157 per annum.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Casey Pierce is 22 years old and has a budget of $3772 per year. His investment start date is 2018-01-25 and his investment end date is 2019-06-15. His hobbies are photography and he avoids Trade and Services.
+PARSED: {'start_date': '2018-01-25', 'end_date': '2019-06-15', 'age': 22, 'total_budget': 5225, 'avoided_sectors': []}Error: Error - something went wrong when requesting [CODE: 418]: Error encountered while evaluation of input: [Error: budget breached (your portfolio value: 4210.5242, budget: 3772)]. This is most likely a you problem. 
+
+Evaluation response: Error - something went wrong when requesting [CODE: 418]: Error encountered while evaluation of input: [Error: budget breached (your portfolio value: 4210.5242, budget: 3772)]. This is most likely a you problem. 
+
+Christopher Freeman is 53 years old and has a budget of $12259. His investment start date is 2013-12-13 and their investment end date is 2016-03-11. He enjoys photography and avoids technology. He is employed with True Salary of $38041 a year.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Zachary Martin was 69 years old when he started investing in real estate. His investment start date was October 17th, 2016 and his investment end date was April 20th, 2019. His hobbies are woodworking and he is employed at True Salary. His budget is $45860 total.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Dean Roy is 78 years old and has invested $29073 total. His investment start date was January 16, 2010 and his investment end date was October 20, 2012. He enjoys woodworking and avoids manufacturing, finance or crypto assets, energy and transportation.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Heather Rhodes is 46 years old and has a budget of $86145. She started investing on December 25th, 2024 and ended on January 23rd, 2025. She enjoys playing the guitar. She avoids Industrial Applications and Services and Technology, Finance, International Corp Fin.
+PARSED: {'start_date': '2024-12-25', 'end_date': '2025-01-23', 'age': 46, 'total_budget': 86145, 'avoided_sectors': ['finance', 'technology']}Evaluation response: {"passed": true, "profit": 5777.210000000006, "points": -77.03384349641982, "error": ""}
+
+Jody Moore is 41 years old and has a budget of $5854 per year. He started investing on March 15th, 2022 and ended on July 12th, 2024. His hobbies are photography and he avoids life sciences.
+PARSED: {'start_date': '2022-03-15', 'end_date': '2024-07-12', 'age': 41, 'total_budget': 13623, 'avoided_sectors': ['life science']}Error: Error - something went wrong when requesting [CODE: 418]: Error encountered while evaluation of input: [Error: budget breached (your portfolio value: 9999.358900000001, budget: 5854)]. This is most likely a you problem. 
+
+Evaluation response: Error - something went wrong when requesting [CODE: 418]: Error encountered while evaluation of input: [Error: budget breached (your portfolio value: 9999.358900000001, budget: 5854)]. This is most likely a you problem. 
+
+Anne Koch is 32 years old and has invested in real estate and construction, energy and transportation, finance, industrial applications and services. She has a budget of $3199 per year. Her investment start date is 2022-10-02. Her investment end date is 2023-07-20.
+PARSED: {'start_date': '2022-10-02', 'end_date': '2023-07-20', 'age': 32, 'total_budget': 2548, 'avoided_sectors': []}Evaluation response: {"passed": true, "profit": 371.9169999999999, "points": -12.660787959181064, "error": ""}
+
+The investment start date for Katelyn was March 16th, 2009 and the investment end date was October 7th, 2011. She is 73 years old and enjoys bird watching. She is employed at True Salary and has a budget of $30413 total.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Amanda Bass is 77 years old and has a budget of $15528. Her investment start date was February 2, 2009 and her investment end date was September 26, 2010. She enjoys bird watching and avoids Manufacturing, Crypto Assets, Life Sciences, International Corp Fin.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Tyler Wiggins is 69 years old and has invested in several companies. His investment start date was February 12th, 2015 and his investment end date was July 18th, 2016. His hobbies are painting and he avoids International Corp Fin, Trade and Services, Manufacturing, Crypto Assets, Energy and Transportation.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Mary Estes is 39 years old and has a budget of $19108 per year. Her investment start date was 2007-05-04 and their investment end date was 2008-0223. Her hobbies are bird watching and she is employed at True Salary.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Benjamin Hunt is 43 years old and has a budget of $25773 for his investment. His investment start date is March 21st 2020 and their investment end date is December 23rd 2022. He enjoys rock climbing and avoids manufacturing.
+PARSED: {'start_date': '2020-03-21', 'end_date': '2022-12-23', 'age': 43, 'total_budget': 25773, 'avoided_sectors': ['manufacturing']}Evaluation response: {"passed": true, "profit": 13487.083800000004, "points": -3.9933167793860687, "error": ""}
+
+Angel Castillo is 26 years old and has a budget of $46891. His investment start date was March 8th, 2010 and his investment end date was March 15th, 2010. He is a gardener and avoids finance employed.
+PARSED: {'start_date': '2010-03-08', 'end_date': '2010-03-15', 'age': 26, 'total_budget': 46891, 'avoided_sectors': ['finance']}Error: Error - something went wrong when requesting [CODE: 418]: Error encountered while evaluation of input: [Error: budget breached (your portfolio value: 48550.4937, budget: 46891)]. This is most likely a you problem. 
+
+Evaluation response: Error - something went wrong when requesting [CODE: 418]: Error encountered while evaluation of input: [Error: budget breached (your portfolio value: 48550.4937, budget: 46891)]. This is most likely a you problem. 
+
+Darrell Johnson is 41 years old, he started investing in crypto assets on July 6th, 2016 and his investment ended on May 20th, 2017. His hobbies are guitar and he avoids Crypto Assets. He has a total budget of $19360.
+PARSED: {'start_date': '2016-07-06', 'end_date': '2017-05-20', 'age': 41, 'total_budget': 19360, 'avoided_sectors': []}Evaluation response: {"passed": true, "profit": 3764.8359999999957, "points": -19.456187650838277, "error": ""}
+
+Sarah Luna is a 20-year-old investor who started investing on December 19, 2013 and ended on March 29, 2016. She enjoys rock climbing and avoids Structured Finance, Crypto Assets, and Technology. She has a total budget of $6085.
+PARSED: {'start_date': '2013-12-19', 'end_date': '2016-03-29', 'age': 20, 'total_budget': 6085, 'avoided_sectors': ['finance', 'technology']}Evaluation response: {"passed": true, "profit": 1542.2594, "points": 23.216708930961794, "error": ""}
+
+Mr. Donald Washington, MD, is 53 years old and has a budget of $3258 per year. His investment start date was on December 22nd, 2016 and his investment end date was on July 15th, 2017. He enjoys bird watching and avoids real estate and construction, technology, finance or crypto assets.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Jose Anderson is 48 years old and has a budget of $22567. His investment start date was February 23rd, 2018 and his investment end date was March 9th, 2019. He enjoys rock climbing and avoids Crypto Assets, Real Estate and Construction.
+PARSED: {'start_date': '2018-02-23', 'end_date': '2019-03-09', 'age': 48, 'total_budget': 22567, 'avoided_sectors': ['real estate']}Evaluation response: {"passed": true, "profit": 1510.7265999999981, "points": 26.849330996855358, "error": ""}
+
+Jonathan Horne is 76 years old and has a budget of $4555. His investment start date is 2019-05-06. His investment end date is 2021-10-06. His hobbies are guitar and he is employed by True. His salary is 101019 per year and his budget is $4555.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Shannon Hubbard is 48 years old and has a budget of $29070. Her investment start date was April 16th, 2012 and ended on May 1st, 2014. She enjoys hiking and does not work in Life Sciences. She is employed at True Salary, which is 251399 per year.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Phyllis Holden is 22 years old, she started investing in 2010-11-13 and her investment end date was 2011-10-06. She enjoys playing the guitar and avoids finance, crypto assets, energy and transportation, structured finance. She has a budget of $3339 per year.
+PARSED: {'start_date': '2010-11-13', 'end_date': '2011-10-06', 'age': 22, 'total_budget': 2989, 'avoided_sectors': ['finance', 'transportation', 'energy']}Evaluation response: {"passed": true, "profit": 444.81650000000013, "points": 30.214387624110486, "error": ""}
+
+Dylan Roberts is a 74 year old investor who started investing on March 4, 2010 and ended on May 3, 2010. He enjoys painting and avoids Industrial Applications and Services and Crypto Assets. He has a total budget of $47149.
+PARSED: {'start_date': '2010-03-04', 'end_date': '2010-05-03', 'age': -1, 'total_budget': 47149, 'avoided_sectors': []}Evaluation response: {"passed": true, "profit": 4438.532500000001, "points": -19.903490248223303, "error": ""}
+
+Lisa Newman is 30 years old and has a total budget of $10098. Her investment start date is January 31, 2024 and their investment end date is December 15, 2024. She enjoys learning languages and is employed in manufacturing. She has a true salary of $67030 a year.
+PARSED: FalseError: Not sent
+Evaluation response: Not sent
+Dana McDonald is 37 years old and has a budget of $78628. His investment start date is October 31, 2023 and his investment end date is December 31, 2023. His hobbies are guitar and he is employed by True. His salary is $119104 a year.
+PARSED: FalseEvaluation response: Not sent
+Tracy Anderson started investing on March 29th, 2016 and ended on December 1st, 2018. She is a bird watcher and has a budget of $52469. She avoids industrial applications and services, manufacturing, trade and services, and life sciences.
+PARSED: {'start_date': '2016-03-29', 'end_date': '2018-12-01', 'age': -1, 'total_budget': 52469, 'avoided_sectors': ['life science', 'manufacturing']}Evaluation response: {"passed": true, "profit": 17346.961499999994, "points": -7.6017287019065085, "error": ""}
+
+Christopher George, who is 67 years old, started investing on March 31st, 2018 and ended on March 28th, 2020. He enjoys knitting and avoids Structured Finance, Finance or Crypto Assets. He has a total budget of $59519.
+PARSED: FalseEvaluation response: Not sent
+Mary Moore is 70 years old and has a budget of $14344. She started investing in 2015-03-13 and ended it on 2018-02-16. Her hobbies are woodworking and she avoids International Corp Fin, Life Sciences, Finance, Manufacturing.
+PARSED: FalseEvaluation response: Not sent
+Kristen Meyia is a 20-year-old investor. She started investing in stocks in 2023-03-28, and her investment ended in 2024-05-08, with a budget of $25643 total. Her hobbies include bird watching, and she avoids Life Sciences, Finance, and Crypto Assets.
+PARSED: {'start_date': '2023-03-28', 'end_date': '2024-05-08', 'age': 20, 'total_budget': 25643, 'avoided_sectors': ['finance', 'life science']}Evaluation response: {"passed": true, "profit": 4426.5975, "points": 46.33654459293513, "error": ""}
+
+Margaret Richardson is 62 years old, has a budget of $59259, and started investing on April 24, 2009. Her investment ended on September 20, 2011. She enjoys learning languages, and is employed at True Salary, earning $172,687 per year.
+PARSED: FalseEvaluation response: Not sent
+Misty Carpenter is a 33-year-old woodworker who invested in a company called International Corp Fin, Trade and Services, Real Estate and Construction. Their investment started on November 28th, 2021 and ended on January 9th, 2022.
+PARSED: False
+Evaluation response: Not sent
+Rebecca Gallagher is 49 years old and has a budget of $44357. Her investment start date was October 2, 2021 and her investment end date was February 6, 2022. She enjoys playing the guitar and does not work in Life Sciences.
+PARSED: {'start_date': '2021-10-02', 'end_date': '2022-02-06', 'age': 49, 'total_budget': 44357, 'avoided_sectors': []}
+Evaluation response: {"passed": true, "profit": 3320.166000000001, "points": -42.34904403752567, "error": ""}
+
+Jeffrey Martinez is a 23-year-old investor who started investing on August 3rd, 2015 and ended on February 24th, 2016. He has a budget of $83159 and a total investment of $195029. His hobbies include hiking, and he avoids crypto assets.
+PARSED: {'start_date': '2015-08-03', 'end_date': '2016-02-24', 'age': 23, 'total_budget': 195029, 'avoided_sectors': []}
+Error: Error - something went wrong when requesting [CODE: 418]: Error encountered while evaluation of input: [Error: budget breached (your portfolio value: 122703.70860000001, budget: 83159)]. This is most likely a you problem. 
+
+Evaluation response: Error - something went wrong when requesting [CODE: 418]: Error encountered while evaluation of input: [Error: budget breached (your portfolio value: 122703.70860000001, budget: 83159)]. This is most likely a you problem. 
+

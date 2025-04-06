@@ -126,5 +126,5 @@ while True:
         if not success:
             f.write(f"Error: {response}\n")
             f.write(f"Evaluation response: {response}\n")
-            # break
+            break
         f.write(f"Evaluation response: {response}\n")

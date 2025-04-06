@@ -9,7 +9,7 @@ import yfinance as yf
 import pandas as pd
 import datetime
 
-BUDGET_RATIO = 0.5
+BUDGET_RATIO = 0.35
 RISK_RATIO = 0.3 # remove RISK_RATIO propotion for filtering the risk
 
 sectors = ["finance", "technology", "life science", "real estate", "energy", "manufacturing"]
@@ -103,7 +103,7 @@ def extract_preferences(message: str):
     dates = re.findall(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", " ".join(filtered_words)[start_index:])
     if len(dates) != 2:
         try:
-            dates = [d[1] for d in search_dates(" ".join(filtered_words)[start_index:]) if 2000 < d[1].year < 2026]
+            dates = [d[1] for d in search_dates(" ".join(filtered_words)[start_index:]) if 2000 < d[1].year < 2025]
         except IndexError:
             # print(filtered_words)
             return False

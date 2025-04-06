@@ -8,6 +8,8 @@ import yfinance as yf
 import pandas as pd
 import datetime
 
+BUDGET_RATIO = 0.5
+RISK_RATIO = 0.3 # remove RISK_RATIO propotion for filtering the risk
 
 sectors = ["finance", "technology", "life science", "real estate", "transportation", "energy", "manufacturing"]
 tickers = ["JPM", "BAC", "WFC", "PGR", "GS", "AAPL", "MSFT", "NVDA", "GOOG", "AMZN", "ISRG", "AMGN", "GILD", "VRTX", "REGN", "ALNY", "AMT", "PLD", "PSA", "DLR", "UPS", "UNP", "CSX", "LUV", "PAA", "MMM", "CAT", "DE", "AMAT", "GE", "HON"]
@@ -34,23 +36,29 @@ def analysis1(start_date, end_date, avoid):
             continue
         else:
             temp_tickers = symbols[sector]
-            # for ticker in temp_tickers:
-            start_date1 = datetime.datetime.strptime(start_date, "%Y-%m-%d")+datetime.timedelta(days=3)
-            end_date1 = datetime.datetime.strptime(end_date, "%Y-%m-%d")+datetime.timedelta(days=3)
-            try:
-                open_data = yf.download(" ".join(temp_tickers), start=start_date, end=start_date1.strftime("%Y-%m-%d"), progress=False)
-                close_data = yf.download(" ".join(temp_tickers), start=end_date, end=end_date1.strftime("%Y-%m-%d"), progress=False)
-                # print(open_data)
-                # print(close_data)
-                if open_data.empty or close_data.empty:
-                    continue
-                for ticker in open_data['Open']:
-                    open_price = open_data['Close'][ticker].iloc[0]
-                    close_price = close_data['Open'][ticker].iloc[0]
-                    if close_price - open_price > 0:
-                        invest[ticker] = float(open_price)
-            except Exception as e:
-                pass
+            with open("mean.txt", "r") as f:
+                data = eval(f.readline())
+            for ticker in temp_tickers:
+                start_year = int(start_date.split("-")[0])
+                end_year = int(end_date.split("-")[0])
+                if data[ticker][end_year] - data[ticker][start_year]:
+                    invest[ticker] = float(data[ticker][start_year])
+            # start_date1 = datetime.datetime.strptime(start_date, "%Y-%m-%d")+datetime.timedelta(days=3)
+            # end_date1 = datetime.datetime.strptime(end_date, "%Y-%m-%d")+datetime.timedelta(days=3)
+            # try:
+            #     open_data = yf.download(" ".join(temp_tickers), start=start_date, end=start_date1.strftime("%Y-%m-%d"), progress=False)
+            #     close_data = yf.download(" ".join(temp_tickers), start=end_date, end=end_date1.strftime("%Y-%m-%d"), progress=False)
+            #     # print(open_data)
+            #     # print(close_data)
+            #     if open_data.empty or close_data.empty:
+            #         continue
+            #     for ticker in open_data['Open']:
+            #         open_price = open_data['Close'][ticker].iloc[0]
+            #         close_price = close_data['Open'][ticker].iloc[0]
+            #         if close_price - open_price > 0:
+            #             invest[ticker] = float(open_price)
+            # except Exception as e:
+            #     pass
     
     # print(invest)
     return invest
@@ -58,7 +66,7 @@ def analysis1(start_date, end_date, avoid):
 
 def pack_portfolio(stock_prices: dict, budget: int):
     portfoio = {}
-    remaining_budget = budget*0.5
+    remaining_budget = budget*BUDGET_RATIO
     stock_prices = list(stock_prices.items())
     sorted_stocks = sorted(stock_prices, key=lambda x: x[1], reverse=True)
     # print(sorted_stocks)
@@ -101,9 +109,6 @@ def extract_preferences(message: str):
             context_dict["age"] = int(word.split("-")[0])
         elif word == "years":
             context_dict["age"] = int(filtered_words[i-1])
-            if int(filtered_words[i-1]) > 50:
-                # print(context_dict)
-                return False
         elif word == "budget":
             budget_phrase = " ".join(filtered_words[i:i+6])
             budget_val = int([b for b in word_tokenize(budget_phrase) if b.isnumeric()][0])
@@ -148,15 +153,46 @@ def compute(message: str):
     pref = extract_preferences(message)
     if (pref):
         prices = analysis1(start_date=pref["start_date"], end_date=pref["end_date"], avoid=pref["avoided_sectors"])
-        portfolio_dict = pack_portfolio(prices, pref["total_budget"])
+        portfolio_dict = pack_portfolio(filter_by_risk(prices, pref["start_date"], pref["end_date"], calculate_risk(pref["age"])), pref["total_budget"])
         return list(portfolio_dict.items())
     else:
         return None
     
-def calculate_risk(std_matrix):
-    pass
+def filter_by_risk(prices, start_date, end_date, risk_level):
+    print("PRICES:", prices)
+    if risk_level == "medium":
+        return prices
+    risks = {}
+    start_year = int(start_date.split("-")[0])
+    end_year = int(end_date.split("-")[0])
+    with open("risk.txt", "r") as f:
+        data = eval(f.readline())
+    for ticker in prices:
+        risks[ticker] = [data[ticker][i] for i in data[ticker] if start_year <= i <= end_year]
+    for ticker in risks:
+        risks[ticker] = sum(risks[ticker])/len(risks[ticker])
+    risks = sorted(list(risks.items()), key=lambda x: x[1])
+    print("RISKS:", risks)
+    n = len(risks)
+    if risk_level == "low":
+        last_index = int((1-RISK_RATIO)*n)
+        filtered_risks = dict(risks[:last_index])
+        return {p: prices[p] for p in prices if p in filtered_risks}
+    else:
+        first_index = int(RISK_RATIO*n)
+        filtered_risks = dict(risks[first_index:])
+        return {p: prices[p] for p in prices if p in filtered_risks} 
 
-# print(compute("Lisa Welch is 27 years old and has a total budget of $17669. Her investment start date is 2017-05-14 and her investment end date is 2018-06-04. Her hobbies are learning languages and she avoids life sciences, finance, and crypto."))
+def calculate_risk(age):
+    if age == -1:
+        return "medium"
+    elif age < 30:
+        return "high"
+    elif 30 <= age <= 60:
+        return "medium" 
+    return "low"
+
+print(compute("Lisa Welch is 27 years old and has a total budget of $17669. Her investment start date is 2017-05-14 and her investment end date is 2018-06-04. Her hobbies are learning languages and she avoids life sciences, finance, and crypto."))
 
 # 
 # with open("examples.txt", "r") as f:

@@ -4,8 +4,6 @@ import json
 import re
 import requests
 from bs4 import BeautifulSoup
-from statistics import mean, mode
-from collections import Counter
 import pandas as pd
 import random
 import threading
@@ -15,7 +13,7 @@ import zlib
 import time
 
 # EXPOSED PROXY ADDRESSSSSSẞSSSSSSSSSSSSSSSSSS'SSSSSSSSSSSSSSXSSSSFSFAADSFADSFADSFADSFADSDFASDFADSDFADSFADSFAS
-
+# THIS WAS V1 (my pain just began)
 proxies = ['http://pingproxies:scrapemequickly@194.87.135.1:9875',
 'http://pingproxies:scrapemequickly@194.87.135.2:9875',
 'http://pingproxies:scrapemequickly@194.87.135.3:9875',

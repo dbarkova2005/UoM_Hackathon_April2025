@@ -7,7 +7,7 @@ import threading
 import time
 # Forgive any dumbass code, blame external conditions e.g. complete sleep deprivation
 team_id = "c335f715-12af-11f0-9285-0242ac120003"
-MAX_WORKERS = 21 
+MAX_WORKERS = 20
 MAX_RETRIES = 3
 REQUEST_TIMEOUT = 10
 
@@ -19,12 +19,12 @@ proxies = [
     'http://pingproxies:scrapemequickly@194.87.135.5:9875'
 ]
 
-# do the tings seperately 
+# creates a lock object for later 
 data_lock = threading.Lock()
-collected_data = []
 token_lock = threading.Lock()
 current_token = None
 
+collected_data = []
 def get_random_proxy():
     return random.choice(proxies)
 

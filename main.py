@@ -15,7 +15,7 @@ import json
 
 MAX_RETRIES = 5
 RETRYABLE_CODES = [429, 500, 502, 503, 504, 531]
-# Step 1: Get the token
+# Get the token
 
 def process_car_data(cars):
     # Initialize variables for max, min, total price, and mode make count
@@ -132,7 +132,7 @@ def main(scraping_run_idd):
         "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
         "Referer": "https://scrapemequickly.com/",
         "Priority": "u=1, i"}
-        # Send GET request
+        # Send GET request, adds another ip but also some time buffer to allow the stuff to not overload
         if random.randint(0,6) == 6:
             response = requests.get(url, headers=headers, params=params)
         else:
